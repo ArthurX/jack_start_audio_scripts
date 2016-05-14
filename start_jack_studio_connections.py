@@ -1,0 +1,76 @@
+#!/usr/bin/python -tt
+
+# to start jack connections for studio use
+
+import sys
+import commands
+
+def make_jack_connect(connections):
+
+
+
+  for connect in connections:
+    cmd = 'jack_connect "' + connect[0] + '" "' + connect[1] + '"'
+    print 'command to run:' , cmd
+    (status, output) = commands.getstatusoutput(cmd)
+    if status:    ## Error case, print the command's output to stderr and exit
+      sys.stderr.write(output)
+#      sys.exit(1)
+    print output  ## Otherwise do something with the command's output
+
+def make_jack_disconnect(connections):
+
+
+
+  for connect in connections:
+    cmd = 'jack_disconnect "' + connect[0] + '" "' + connect[1] + '"'
+    print 'command to run:' , cmd
+    (status, output) = commands.getstatusoutput(cmd)
+    if status:    ## Error case, print the command's output to stderr and exit
+      sys.stderr.write(output)
+#      sys.exit(1)
+    print output  ## Otherwise do something with the command's output
+
+def main():
+  studio_connections = [("Non-Mixer/HeadPhone:out-1", "system:playback_1"),
+                 ("Non-Mixer/HeadPhone:out-2", "system:playback_2"),
+                 ("Non-Mixer/HeadPhone:out-1", "system:playback_3"),
+                 ("Non-Mixer/HeadPhone:out-2", "system:playback_4"),
+                 ("Non-Mixer/HeadPhone:out-1", "system:playback_5"),
+                 ("Non-Mixer/HeadPhone:out-2", "system:playback_6"),
+                 ("Non-Mixer/HeadPhone:out-1", "system:playback_7"),
+                 ("Non-Mixer/HeadPhone:out-2", "system:playback_8")]
+
+  stage_connections = [("Non-Mixer/HeadPhone:out-1", "system:playback_1"),
+                 ("Non-Mixer/HeadPhone:out-2", "system:playback_2"),
+                 ("Non-Mixer/LinSamplr:out-1", "system:playback_3"),       # piano to output 3 and 4
+                 ("Non-Mixer/LinSamplr:out-2", "system:playback_4"),
+                 ("Non-Mixer/LinSamplr2:out-1", "system:playback_3"),
+                 ("Non-Mixer/LinSamplr2:out-2", "system:playback_4"),
+                 ("Non-Mixer/ZynArtBamba:out-1", "system:playback_3"),
+                 ("Non-Mixer/ZynArtBamba:out-2", "system:playback_4"),
+                 ("Non-Mixer/Voice:out-1", "system:playback_5"),           # voice  to  5
+                 ("Non-Mixer/Drum:out-1", "system:playback_6"),            # drum   to  6
+                 ("Non-Mixer/ZitaVerb:out-1", "system:playback_7"),        # zita verb to 7 8
+                 ("Non-Mixer/ZitaVerb:out-2", "system:playback_8")]
+
+
+
+  args = sys.argv[1:]
+
+  if not args:
+    print 'usage: choose studio or stage '
+    sys.exit(1)
+
+  if args[0] == "studio" :
+    make_jack_disconnect(stage_connections)
+    make_jack_connect(studio_connections)
+
+  if args[0] == "stage" :
+    make_jack_disconnect(studio_connections)
+    make_jack_connect(stage_connections)
+    print "piano to output 3 and 4 \n voice  to  5   \n  drum   to  6  \n zita verb to 7 8"
+
+
+if __name__ == '__main__':
+  main()
