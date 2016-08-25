@@ -43,16 +43,28 @@ def main():
                  ("Non-Mixer/KeysAll:out-2", "Non-Mixer/BassPiano:in-2"),
                  ("Non-Mixer/Bass:out-1", "Non-Mixer/BassBass:in-1"),
                  ("Non-Mixer/Bass:out-2", "Non-Mixer/BassBass:in-2"),
+                 ("Non-Mixer/Drum:out-1", "Non-Mixer/BassDrum:in-1"),
+                 ("Non-Mixer/Drum:out-2", "Non-Mixer/BassDrum:in-2"),
+                 ("Non-Mixer/Voice:out-1", "Non-Mixer/BassVoice:in-1"),
+                 ("Non-Mixer/Voice:out-2", "Non-Mixer/BassVoice:in-2"),
+                 ("Non-Mixer/Guitarix:out-1", "Non-Mixer/BassGuitarix:in-1"),
+                 ("Non-Mixer/Guitarix:out-2", "Non-Mixer/BassGuitarix:in-2"),
                  ("Non-Mixer/Main Out:out-1", "Non-Mixer/BassMainMix:in-1"),
                  ("Non-Mixer/Main Out:out-2", "Non-Mixer/BassMainMix:in-2"),
 
                   # internal
                  ( "Non-Mixer/BassPiano:out-1","Non-Mixer/BassPhone:in-1" ),
                  ("Non-Mixer/BassPiano:out-2","Non-Mixer/BassPhone:in-2" ),
+                ("Non-Mixer/BassBass:out-1","Non-Mixer/BassPhone:in-1" ),
+                 ( "Non-Mixer/BassBass:out-2", "Non-Mixer/BassPhone:in-2"),
                  ("Non-Mixer/BassDrum:out-1","Non-Mixer/BassPhone:in-1" ),
                  ( "Non-Mixer/BassDrum:out-2", "Non-Mixer/BassPhone:in-2"),
                  ( "Non-Mixer/BassMainMix:out-1", "Non-Mixer/BassPhone:in-1"),
                  ("Non-Mixer/BassMainMix:out-2", "Non-Mixer/BassPhone:in-2"),
+                 ("Non-Mixer/BassVoice:out-1","Non-Mixer/BassPhone:in-1" ),
+                 ( "Non-Mixer/BassVoice:out-2", "Non-Mixer/BassPhone:in-2"),
+                 ( "Non-Mixer/BassGuitarix:out-1", "Non-Mixer/BassPhone:in-1"),
+                 ("Non-Mixer/BassGuitarix:out-2", "Non-Mixer/BassPhone:in-2"),
 
                   #outputs
                  ("Non-Mixer/BassPhone:out-1", "system:playback_3"),

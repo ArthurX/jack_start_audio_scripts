@@ -33,12 +33,14 @@ sleep 10
 #qjackctl &
 #sleep 10
 #guitarix &
-#qmidiroute /home/arthurx/Audio_Samples/MidiKeySplit_69_under_to_2_above_to_3_midichannel.qmr &
+#qmidiroute /home/arthurx/Audio_Settings_Samples/Scripts/foot_con_soft_64_to_67.qmr &
 
 
 sleep 10
-non-mixer /home/arthurx/Audio_Rec_2016/work_dir/Non-Mixer/ &
 
+non-mixer /home/arthurx/Audio_Settings_Samples/Preset_non_mixer/HeadPhone_Mix/RobPhone/ &
+non-mixer /home/arthurx/Audio_Settings_Samples/Preset_non_mixer/HeadPhone_Mix/BassPhone/ &
+non-mixer /home/arthurx/Audio_Rec_2016/work_dir/Non-Mixer/ &
 
 non-timeline /home/arthurx/Audio_Rec_2016/work_dir/ &
 
@@ -136,6 +138,7 @@ jack_connect  "Non-Timeline:Drum/out-1"  "Non-Mixer/Drum:in-1"      &
 jack_connect  "Non-Timeline:Voice/out-1"  "Non-Mixer/Voice:in-1"      &
 jack_connect  "Non-Timeline:Voice2/out-1"  "Non-Mixer/Voice2:in-1"      &
 jack_connect  "Non-Timeline:Bass/out-1"  "Non-Mixer/Bass:in-1"      &
+jack_connect  "Non-Timeline:Guitar/out-1"  "Non-Mixer/Guitar:in-1"      &
 #jack_connect  "Non-Timeline:Bass/out-1"  "Non-Mixer/Bass:in-1"      &
 jack_connect  "Non-Timeline:Piano/out-1" "Non-Mixer/Piano:in-1"    &
 jack_connect  "Non-Timeline:Piano/out-2"  "Non-Mixer/Piano:in-2"    &
@@ -185,6 +188,14 @@ jack_connect  "Non-Mixer/LinSamplr2:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 jack_connect  "Non-Mixer/LinSamplr2:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 jack_connect  "Non-Mixer/LinSamplr2:out-1"       "Non-Mixer/Main Out:in-1"     &
 jack_connect  "Non-Mixer/LinSamplr2:out-2"       "Non-Mixer/Main Out:in-2"     &
+
+# to KeysAll
+jack_connect  "Non-Mixer/LinSamplr:out-1"       "Non-Mixer/KeysAll:in-1"     &
+jack_connect  "Non-Mixer/LinSamplr:out-2"       "Non-Mixer/KeysAll:in-2"     &
+jack_connect  "Non-Mixer/LinSamplr2:out-1"       "Non-Mixer/KeysAll:in-1"     &
+jack_connect  "Non-Mixer/LinSamplr2:out-2"       "Non-Mixer/KeysAll:in-2"     &
+jack_connect  "Non-Mixer/ZynArtBamba:out-1"       "Non-Mixer/KeysAll:in-1"     &
+jack_connect  "Non-Mixer/ZynArtBamba:out-2"       "Non-Mixer/KeysAll:in-2"     &
 
 jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
@@ -252,12 +263,13 @@ jack_connect "a2j:SWISSONIC EasyKeys61 [24] (capture): SWISSONIC EasyKeys61 MIDI
 jack_connect "a2j:SWISSONIC EasyKeys61 [28] (capture): SWISSONIC EasyKeys61 MIDI 1" zynaddsubfx:midi_input     &
 
 
-#jack_connect "a2j:RoMIO II [28] (capture): RoMIO II MIDI 1" LinuxSampler:midi_in_0    &
-#jack_connect "a2j:RoMIO II [20] (capture): RoMIO II MIDI 1" LinuxSampler:midi_in_0   &
+jack_connect "a2j:RoMIO II [28] (capture): RoMIO II MIDI 1" LinuxSampler:midi_in_0    &
+jack_connect "a2j:RoMIO II [20] (capture): RoMIO II MIDI 1" LinuxSampler:midi_in_0   &
+jack_connect "a2j:RoMIO II [24] (capture): RoMIO II MIDI 1" LinuxSampler:midi_in_0   &
 
-#jack_connect "a2j:RoMIO II [24] (capture): RoMIO II MIDI 1" zynaddsubfx:midi_input  &
-#jack_connect "a2j:RoMIO II [28] (capture): RoMIO II MIDI 1" zynaddsubfx:midi_input  &
-#jack_connect "a2j:RoMIO II [20] (capture): RoMIO II MIDI 1" zynaddsubfx:midi_input  &
+jack_connect "a2j:RoMIO II [24] (capture): RoMIO II MIDI 1" "yoshimi:midi in"  &
+jack_connect "a2j:RoMIO II [28] (capture): RoMIO II MIDI 1" "yoshimi:midi in"  &
+jack_connect "a2j:RoMIO II [20] (capture): RoMIO II MIDI 1" "yoshimi:midi in"  &
 
 #jack_connect   system:midi_capture_1     LinuxSampler:midi_in_0        &
 #jack_connect   system:midi_capture_1     zynaddsubfx:midi_input       &
@@ -268,4 +280,6 @@ jack_connect "a2j:SWISSONIC EasyKeys61 [28] (capture): SWISSONIC EasyKeys61 MIDI
 ########################################################################################
 
 /home/arthurx/Audio_Settings_Samples/Scripts/start_jack_studio_connections.py studio &
+/home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_rob.py  &
+/home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Bass.py  &
 

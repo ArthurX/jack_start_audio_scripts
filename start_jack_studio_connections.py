@@ -34,21 +34,15 @@ def make_jack_disconnect(connections):
 def main():
   studio_connections = [("Non-Mixer/HeadPhone:out-1", "system:playback_1"),
                  ("Non-Mixer/HeadPhone:out-2", "system:playback_2"),
-                 ("Non-Mixer/HeadPhone:out-1", "system:playback_3"),
-                 ("Non-Mixer/HeadPhone:out-2", "system:playback_4"),
-                 ("Non-Mixer/HeadPhone:out-1", "system:playback_5"),
-                 ("Non-Mixer/HeadPhone:out-2", "system:playback_6"),
                  ("Non-Mixer/HeadPhone:out-1", "system:playback_7"),
                  ("Non-Mixer/HeadPhone:out-2", "system:playback_8")]
 
+
+
   stage_connections = [("Non-Mixer/HeadPhone:out-1", "system:playback_1"),
                  ("Non-Mixer/HeadPhone:out-2", "system:playback_2"),
-                 ("Non-Mixer/LinSamplr:out-1", "system:playback_3"),       # piano to output 3 and 4
-                 ("Non-Mixer/LinSamplr:out-2", "system:playback_4"),
-                 ("Non-Mixer/LinSamplr2:out-1", "system:playback_3"),
-                 ("Non-Mixer/LinSamplr2:out-2", "system:playback_4"),
-                 ("Non-Mixer/ZynArtBamba:out-1", "system:playback_3"),
-                 ("Non-Mixer/ZynArtBamba:out-2", "system:playback_4"),
+                 ("Non-Mixer/KeysAll:out-1", "system:playback_3"),       # piano to output 3 and 4
+                 ("Non-Mixer/KeysAll:out-2", "system:playback_4"),
                  ("Non-Mixer/Voice:out-1", "system:playback_5"),           # voice  to  5
                  ("Non-Mixer/Drum:out-1", "system:playback_6"),            # drum   to  6
                  ("Non-Mixer/ZitaVerb:out-1", "system:playback_7"),        # zita verb to 7 8
