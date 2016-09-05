@@ -1,0 +1,114 @@
+Tempo_Point 0x81F create :start 0 :tempo 120.000000
+Time_Point 0x820 create :start 0 :beats_per_bar 4 :beat_type 4
+{
+	Track 0x821 create :name "Audio" :sequence 0x0 :selected 0 :color 1763148288
+	Audio_Sequence 0x822 create :track 0x821 :name "Mon Dec 28 11:51:43 2015"
+}
+Track 0x821 set :name "Voice" << :name "Audio"
+{
+	Track 0x823 create :name "Audio" :sequence 0x0 :selected 0 :color 2127351808
+	Audio_Sequence 0x824 create :track 0x823 :name "Mon Dec 28 11:52:07 2015"
+}
+Track 0x823 set :name "Voice2" << :name "Audio"
+{
+	Track 0x825 create :name "Audio" :sequence 0x0 :selected 0 :color 3458930944
+	Audio_Sequence 0x826 create :track 0x825 :name "Mon Dec 28 11:52:34 2015"
+}
+Track 0x825 set :name "Piano" << :name "Audio"
+{
+	Track 0x827 create :name "Audio" :sequence 0x0 :selected 0 :color 2755656960
+	Audio_Sequence 0x828 create :track 0x827 :name "Mon Dec 28 11:52:52 2015"
+}
+Track 0x827 set :name "LinSampl" << :name "Audio"
+Track 0x827 set :name "LinSamplr" << :name "LinSampl"
+{
+	Track 0x829 create :name "Audio" :sequence 0x0 :selected 0 :color 3988556544
+	Audio_Sequence 0x82A create :track 0x829 :name "Mon Dec 28 11:53:39 2015"
+}
+Track 0x829 set :name "Zynadd" << :name "Audio"
+Track 0x829 set :name "ZynArtBamba" << :name "Zynadd"
+{
+	Track 0x82B create :name "Audio" :sequence 0x0 :selected 0 :color 2911160320
+	Audio_Sequence 0x82C create :track 0x82B :name "Mon Dec 28 11:54:29 2015"
+}
+Track 0x82B set :name "Drum" << :name "Audio"
+{
+	Track 0x82D create :name "Audio" :sequence 0x0 :selected 0 :color 3051446016
+	Audio_Sequence 0x82E create :track 0x82D :name "Mon Dec 28 11:55:13 2015"
+}
+Track 0x82D set :name "Bass" << :name "Audio"
+{
+	Track 0x82F create :name "Audio" :sequence 0x0 :selected 0 :color 2065676032
+	Audio_Sequence 0x830 create :track 0x82F :name "Mon Dec 28 11:55:36 2015"
+}
+Track 0x82F set :name "MainOut" << :name "Audio"
+{
+	Track 0x831 create :name "Audio" :sequence 0x0 :selected 0 :color 3452119296
+	Audio_Sequence 0x832 create :track 0x831 :name "Mon Dec 28 11:56:02 2015"
+}
+{
+	Track 0x833 create :name "Audio.1" :sequence 0x0 :selected 0 :color 2941471488
+	Audio_Sequence 0x834 create :track 0x833 :name "Mon Dec 28 11:56:07 2015"
+}
+Track 0x831 set :name "JaminOut" << :name "Audio"
+{
+	Audio_Sequence 0x834 destroy << :track 0x833 :name "Mon Dec 28 11:56:07 2015"
+	Track 0x833 destroy << :name "Audio.1" :sequence 0x0 :selected 0 :color 2941471488
+}
+Track 0x829 set :name "ZynAddBamba" << :name "ZynArtBamba"
+Track 0x82F set :name "OutMix" << :name "MainOut"
+Track 0x831 set :name "OutJamin" << :name "JaminOut"
+{
+	Track 0x8E6 create :name "Audio" :sequence 0x0 :selected 0 :color 182259200
+	Audio_Sequence 0x8E7 create :track 0x8E6 :name "Tue Dec 29 13:21:57 2015"
+}
+Track 0x8E6 set :name "LinSamplr2" << :name "Audio"
+{
+	Audio_Region 0x8F3 create :source "ZynAddBamba-1458408897.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 44 :length 7243136 :start 0 :sequence 0x82A :selected 0 :offset 448 :loop 0
+	Audio_Region 0x8F5 create :source "LinSamplr-1458408898.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 161 :length 7243136 :start 0 :sequence 0x828 :selected 0 :offset 448 :loop 0
+	Audio_Region 0x8F4 create :source "Piano-1458408899.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 6 :length 7243136 :start 0 :sequence 0x826 :selected 0 :offset 768 :loop 0
+	Audio_Region 0x8F2 create :source "Voice-1458408900.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 243 :length 7243136 :start 0 :sequence 0x822 :selected 0 :offset 768 :loop 0
+}
+{
+	Audio_Region 0x8F8 create :source "ZynAddBamba-1458409359.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 38 :length 5679488 :start 7642752 :sequence 0x82A :selected 0 :offset 448 :loop 0
+	Audio_Region 0x8F7 create :source "LinSamplr-1458409361.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 147 :length 5679488 :start 7642752 :sequence 0x828 :selected 0 :offset 448 :loop 0
+	Audio_Region 0x8F6 create :source "Piano-1458409360.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 245 :length 5679488 :start 7642752 :sequence 0x826 :selected 0 :offset 768 :loop 0
+	Audio_Region 0x8F9 create :source "Voice-1458409362.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 246 :length 5679488 :start 7642752 :sequence 0x822 :selected 0 :offset 768 :loop 0
+}
+Audio_Region 0x8F9 set :start 7634560 << :start 7642752
+Audio_Region 0x8F9 set :start 7642752 << :start 7634560
+{
+	Audio_Region 0x8F9 destroy << :source "Voice-1458409362.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 246 :length 5679488 :start 7642752 :sequence 0x822 :selected 0 :offset 768 :loop 0
+	Audio_Region 0x8F6 destroy << :source "Piano-1458409360.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 245 :length 5679488 :start 7642752 :sequence 0x826 :selected 1 :offset 768 :loop 0
+	Audio_Region 0x8F7 destroy << :source "LinSamplr-1458409361.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 147 :length 5679488 :start 7642752 :sequence 0x828 :selected 1 :offset 448 :loop 0
+	Audio_Region 0x8F8 destroy << :source "ZynAddBamba-1458409359.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 38 :length 5679488 :start 7642752 :sequence 0x82A :selected 0 :offset 448 :loop 0
+}
+{
+	Audio_Region 0x8F2 destroy << :source "Voice-1458408900.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 243 :length 7243136 :start 0 :sequence 0x822 :selected 0 :offset 768 :loop 0
+	Audio_Region 0x8F4 destroy << :source "Piano-1458408899.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 6 :length 7243136 :start 0 :sequence 0x826 :selected 0 :offset 768 :loop 0
+	Audio_Region 0x8F5 destroy << :source "LinSamplr-1458408898.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 161 :length 7243136 :start 0 :sequence 0x828 :selected 0 :offset 448 :loop 0
+	Audio_Region 0x8F3 destroy << :source "ZynAddBamba-1458408897.flac" :gain 1.000000 :fade-in-type 1 :fade-in-duration 256 :fade-out-type 1 :fade-out-duration 256 :color 44 :length 7243136 :start 0 :sequence 0x82A :selected 0 :offset 448 :loop 0
+}
+Track 0x8E6 set :name "Audio" << :name "LinSamplr2"
+{
+	Audio_Sequence 0x8E7 destroy << :track 0x8E6 :name "Tue Dec 29 13:21:57 2015"
+	Track 0x8E6 destroy << :name "Audio" :sequence 0x0 :selected 0 :color 182259200
+}
+Track 0x831 set :name "JaminOut" << :name "OutJamin"
+Track 0x82F set :name "MainOut" << :name "OutMix"
+Track 0x829 set :name "ZynArtBamba" << :name "ZynAddBamba"
+{
+	Track 0x833 create :name "Audio.1" :sequence 0x0 :selected 0 :color 2941471488
+	Audio_Sequence 0x834 create :track 0x833 :name "Mon Dec 28 11:56:07 2015"
+}
+Track 0x833 set :name "Guitar" << :name "Audio.1"
+{
+	Track 0x835 create :name "Audio" :sequence 0x0 :selected 0 :color 3633929728
+	Audio_Sequence 0x836 create :track 0x835 :name "Sun Mar 20 07:48:46 2016"
+}
+Track 0x835 set :name "Guitarix" << :name "Audio"
+{
+	Track 0x900 create :name "Audio" :sequence 0x0 :selected 0 :color 290973696
+	Audio_Sequence 0x901 create :track 0x900 :name "Wed Mar 23 07:32:00 2016"
+}
+Track 0x900 set :name "LinSamplr2" << :name "Audio"

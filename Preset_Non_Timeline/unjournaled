@@ -1,0 +1,13 @@
+0x821 set :height 1 :inputs 1 :outputs 1 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 0
+0x823 set :height 1 :inputs 1 :outputs 1 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 1
+0x825 set :height 1 :inputs 2 :outputs 2 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 2
+0x827 set :height 1 :inputs 2 :outputs 2 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 3
+0x829 set :height 1 :inputs 2 :outputs 2 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 5
+0x82B set :height 1 :inputs 1 :outputs 1 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 6
+0x82D set :height 1 :inputs 1 :outputs 1 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 7
+0x82F set :height 1 :inputs 2 :outputs 2 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 10
+0x831 set :height 1 :inputs 2 :outputs 2 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 11
+0x833 set :height 1 :inputs 1 :outputs 1 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 8
+0x835 set :height 1 :inputs 2 :outputs 2 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 9
+0x8E6 set :height 1 :inputs 2 :outputs 2 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 4
+0x900 set :height 1 :inputs 2 :outputs 2 :show-all-takes 0 :overlay-controls 0 :armed 0 :mute 0 :solo 0 :row 4
