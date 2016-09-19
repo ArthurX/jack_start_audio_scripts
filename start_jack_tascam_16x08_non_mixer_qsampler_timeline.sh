@@ -68,11 +68,12 @@ qjackctl &
 
 
 #######################################################################################
-# connect net audio inputs to non-mixer non-timeline
+# connect net audio inputs to non-mixer and non-timeline
 #######################################################################################
 jack_connect  system:capture_5 "Non-Mixer/Drum:in-1"      &
 jack_connect  system:capture_1 "Non-Mixer/Voice:in-1"      &
 jack_connect  system:capture_2 "Non-Mixer/Voice2:in-1"      &
+jack_connect  system:capture_7 "Non-Mixer/VoiceTube:in-1"      &
 jack_connect  system:capture_10 "Non-Mixer/Bass:in-1"      &
 jack_connect  system:capture_9 "Non-Mixer/Guitar:in-1"      &
 #jack_connect  system:capture_11 "Non-Mixer/Piano:in-1"    &
@@ -82,6 +83,7 @@ jack_connect  system:capture_9 "Non-Mixer/Guitar:in-1"      &
 jack_connect  system:capture_5 "Non-Timeline:Drum/in-1"      &
 jack_connect  system:capture_1 "Non-Timeline:Voice/in-1"      &
 jack_connect  system:capture_2 "Non-Timeline:Voice2/in-1"      &
+jack_connect  system:capture_7 "Non-Timeline:VoiceTube/in-1"      &
 jack_connect  system:capture_10 "Non-Timeline:Bass/in-1"      &
 jack_connect  system:capture_9 "Non-Timeline:Guitar/in-1"      &
 #jack_connect  system:capture_11 "Non-Timeline:Piano/in-1"    &
@@ -137,11 +139,13 @@ jack_connect  gx_head_fx:out_1       "Non-Timeline:Guitarix/in-2"             &
 jack_connect  "Non-Timeline:Drum/out-1"  "Non-Mixer/Drum:in-1"      &
 jack_connect  "Non-Timeline:Voice/out-1"  "Non-Mixer/Voice:in-1"      &
 jack_connect  "Non-Timeline:Voice2/out-1"  "Non-Mixer/Voice2:in-1"      &
+jack_connect  "Non-Timeline:VoiceTube/out-1" "Non-Mixer/VoiceTube:in-1"    &
 jack_connect  "Non-Timeline:Bass/out-1"  "Non-Mixer/Bass:in-1"      &
 jack_connect  "Non-Timeline:Guitar/out-1"  "Non-Mixer/Guitar:in-1"      &
 #jack_connect  "Non-Timeline:Bass/out-1"  "Non-Mixer/Bass:in-1"      &
 jack_connect  "Non-Timeline:Piano/out-1" "Non-Mixer/Piano:in-1"    &
 jack_connect  "Non-Timeline:Piano/out-2"  "Non-Mixer/Piano:in-2"    &
+
 
 #  linuxsampler  :: Non-Timeline to Non-Mixer
 jack_connect  "Non-Timeline:LinSamplr/out-1"   "Non-Mixer/LinSamplr:in-1"    &
@@ -154,25 +158,29 @@ jack_connect  "Non-Timeline:ZynArtBamba/out-1"  "Non-Mixer/ZynArtBamba:in-1"    
 jack_connect  "Non-Timeline:ZynArtBamba/out-2" "Non-Mixer/ZynArtBamba:in-2"    &
 
 #   guitarix   ::  Non-Timeline to Non-Mixer
-
-
+jack_connect  "Non-Timeline:Guitarix/out-1"  "Non-Mixer/Guitarix:in-1"    &
+jack_connect  "Non-Timeline:Guitarix/out-2"  "Non-Mixer/Guitarix:in-2"    &
 
 
 
 ######################################################################################
 #   non-mixer intern from left to right
 ######################################################################################
-jack_connect  "Non-Mixer/Voice:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
-jack_connect  "Non-Mixer/Voice:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
-
 
 jack_connect  "Non-Mixer/Voice:out-1"       "Non-Mixer/Main Out:in-1"     &
 jack_connect  "Non-Mixer/Voice:out-2"       "Non-Mixer/Main Out:in-2"     &
+jack_connect  "Non-Mixer/Voice:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/Voice:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 
 jack_connect  "Non-Mixer/Voice2:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 jack_connect  "Non-Mixer/Voice2:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 jack_connect  "Non-Mixer/Voice2:out-1"       "Non-Mixer/Main Out:in-1"     &
 jack_connect  "Non-Mixer/Voice2:out-2"       "Non-Mixer/Main Out:in-2"     &
+
+jack_connect  "Non-Mixer/VoiceTube:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/VoiceTube:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/VoiceTube:out-1"       "Non-Mixer/Main Out:in-1"     &
+jack_connect  "Non-Mixer/VoiceTube:out-2"       "Non-Mixer/Main Out:in-2"     &
 
 jack_connect  "Non-Mixer/Piano:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 jack_connect  "Non-Mixer/Piano:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
@@ -213,8 +221,8 @@ jack_connect  "Non-Mixer/Bass:out-1"       "Non-Mixer/Main Out:in-1"     &
 jack_connect  "Non-Mixer/Bass:out-2"       "Non-Mixer/Main Out:in-2"     &
 
 
-jack_connect  "Non-Mixer/Guitar:out-1"       "Non-Mixer/Main Out:in-1"     &
-jack_connect  "Non-Mixer/Guitar:out-2"       "Non-Mixer/Main Out:in-2"     &
+#jack_connect  "Non-Mixer/Guitar:out-1"       "Non-Mixer/Main Out:in-1"     &
+#jack_connect  "Non-Mixer/Guitar:out-2"       "Non-Mixer/Main Out:in-2"     &
 
 jack_connect  "Non-Mixer/Guitarix:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 jack_connect  "Non-Mixer/Guitarix:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
@@ -230,12 +238,15 @@ jack_connect  "Non-Mixer/Main Out:out-2"   "Non-Mixer/HeadPhone:in-2"   &
 ############################################################################################
 # from mixer to net, timeline, guitarix
 ##################################################################################################
+
 #  mixer :: net
 jack_connect   "Non-Mixer/HeadPhone:out-1" system:playback_1  &
 jack_connect   "Non-Mixer/HeadPhone:out-2" system:playback_2  &
+
 #    mixer  ::  timeline
 jack_connect   "Non-Mixer/Main Out:out-1" "Non-Timeline:MainOut/in-1"   &
 jack_connect   "Non-Mixer/Main Out:out-2" "Non-Timeline:MainOut/in-2"   &
+
 #    mixer  ::   guitarix
 jack_connect  "Non-Mixer/Voice:aux-B/out-1"    gx_head_amp:in_0   &
 jack_connect  "Non-Mixer/Guitar:out-1"   gx_head_amp:in_0   &
