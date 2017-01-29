@@ -112,3 +112,28 @@ Track 0x835 set :name "Guitarix" << :name "Audio"
 	Audio_Sequence 0x901 create :track 0x900 :name "Wed Mar 23 07:32:00 2016"
 }
 Track 0x900 set :name "LinSamplr2" << :name "Audio"
+{
+	Track 0xAAF create :name "Audio" :sequence 0x0 :selected 0 :color 3806925568
+	Audio_Sequence 0xAB0 create :track 0xAAF :name "Mon Sep 19 14:53:11 2016"
+}
+Track 0xAAF set :name "VoiceTube" << :name "Audio"
+{
+	Track 0xB24 create :name "Audio" :sequence 0x0 :selected 0 :color 1361961472
+	Audio_Sequence 0xB25 create :track 0xB24 :name "Tue Oct 18 02:59:44 2016"
+}
+Track 0xB24 set :name "DrumEllo" << :name "Audio"
+{
+	Track 0xF16 create :name "Audio" :sequence 0x0 :selected 0 :color 3910341632
+	Audio_Sequence 0xF17 create :track 0xF16 :name "Tue Dec  6 06:31:54 2016"
+}
+Track 0xF16 set :name "DrumManami" << :name "Audio"
+{
+	Track 0x1712 create :name "Audio" :sequence 0x0 :selected 0 :color 2387684608
+	Audio_Sequence 0x1713 create :track 0x1712 :name "Wed Jan 11 06:21:44 2017"
+}
+Track 0x1712 set :name "Keys2" << :name "Audio"
+{
+	Track 0x1714 create :name "Audio" :sequence 0x0 :selected 0 :color 139861760
+	Audio_Sequence 0x1715 create :track 0x1714 :name "Wed Jan 11 06:22:00 2017"
+}
+Track 0x1714 set :name "Keys3" << :name "Audio"
