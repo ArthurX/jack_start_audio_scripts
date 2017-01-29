@@ -22,6 +22,7 @@ jack_control dps period 128
  
 sleep 10
 killall qsampler 
+killall qtractor 
 
 sleep 10
 qsampler /home/arthurx/Audio_Settings_Samples/Audio_Samples/Grand_Strings.lscp &
@@ -37,10 +38,18 @@ sleep 10
 
 
 sleep 10
+qtractor /home/arthurx/Audio_Rec_2016/2017/1/Wolbodo_7_Jan_2017/Qtrac/Wolbodo_2017.qtr &
+
+sleep 10
+#/home/arthurx/Audio_Settings_Samples/Scripts/convert_osc_to_non_float.py  8080 8081 &
 
 non-mixer /home/arthurx/Audio_Settings_Samples/Preset_non_mixer/HeadPhone_Mix/RobPhone/ &
+sleep 2
 non-mixer /home/arthurx/Audio_Settings_Samples/Preset_non_mixer/HeadPhone_Mix/BassPhone/ &
-non-mixer /home/arthurx/Audio_Rec_2016/work_dir/Non-Mixer/ &
+sleep 2
+non-mixer /home/arthurx/Audio_Rec_2016/work_dir/Non-Mixer/ & # --osc-port 8081 &
+sleep 2
+
 
 non-timeline /home/arthurx/Audio_Rec_2016/work_dir/ &
 
@@ -78,6 +87,12 @@ jack_connect  system:capture_10 "Non-Mixer/Bass:in-1"      &
 jack_connect  system:capture_9 "Non-Mixer/Guitar:in-1"      &
 #jack_connect  system:capture_11 "Non-Mixer/Piano:in-1"    &
 #jack_connect  system:capture_12 "Non-Mixer/Piano:in-2"    &
+jack_connect  system:capture_13 "Non-Mixer/DrumManami:in-1"      &
+jack_connect  system:capture_14 "Non-Mixer/DrumManami:in-2"      &
+jack_connect  system:capture_15 "Non-Mixer/DrumEllo:in-1"      &
+jack_connect  system:capture_16 "Non-Mixer/DrumEllo:in-2"      &
+
+
 # connect net audio inputs to non-timeline
 #######################################################################################
 jack_connect  system:capture_5 "Non-Timeline:Drum/in-1"      &
@@ -88,7 +103,10 @@ jack_connect  system:capture_10 "Non-Timeline:Bass/in-1"      &
 jack_connect  system:capture_9 "Non-Timeline:Guitar/in-1"      &
 #jack_connect  system:capture_11 "Non-Timeline:Piano/in-1"    &
 #jack_connect  system:capture_12 "Non-Timeline:Piano/in-2"    &
-
+jack_connect  system:capture_13 "Non-Timeline:DrumManami/in-1"      &
+jack_connect  system:capture_14 "Non-Timeline:DrumManami/in-2"      &
+jack_connect  system:capture_15 "Non-Timeline:DrumEllo/in-1"      &
+jack_connect  system:capture_16 "Non-Timeline:DrumEllo/in-2"      &
 
 ###############################################################################################
 # from linuxsampler to non-mixer  non-timeline
@@ -96,14 +114,17 @@ jack_connect  system:capture_9 "Non-Timeline:Guitar/in-1"      &
 jack_connect  LinuxSampler:0 "Non-Mixer/LinSamplr:in-1"    &
 jack_connect  LinuxSampler:1 "Non-Mixer/LinSamplr:in-2"    &
 
-jack_connect  LinuxSampler1:0 "Non-Mixer/LinSamplr2:in-1"    &
-jack_connect  LinuxSampler1:1 "Non-Mixer/LinSamplr2:in-2"    &
+jack_connect  LinuxSampler:2 "Non-Mixer/LinSamplr2:in-1"    &
+jack_connect  LinuxSampler:3 "Non-Mixer/LinSamplr2:in-2"    &
+
+jack_connect  LinuxSampler:4 "Non-Mixer/LinSamplr3:in-1"    &
+jack_connect  LinuxSampler:5 "Non-Mixer/LinSamplr3:in-2"    &
 # from linuxsampler to non-timeline
 jack_connect  LinuxSampler:0 "Non-Timeline:LinSamplr/in-1"    &
 jack_connect  LinuxSampler:1 "Non-Timeline:LinSamplr/in-2"    &
 
-jack_connect  LinuxSampler1:0 "Non-Timeline:LinSamplr2/in-1"    &
-jack_connect  LinuxSampler1:1 "Non-Timeline:LinSamplr2/in-2"    &
+jack_connect  LinuxSampler:2 "Non-Timeline:LinSamplr2/in-1"    &
+jack_connect  LinuxSampler:3 "Non-Timeline:LinSamplr2/in-2"    &
 
 #############################################################################################
 #  yoshimi to non-mixer  non-timeline
@@ -136,6 +157,10 @@ jack_connect  gx_head_fx:out_1       "Non-Timeline:Guitarix/in-2"             &
 #  Non-Timeline to Non-Mixer
 ###########################################################################################
 #  net inputs  :: Non-Timeline to Non-Mixer
+jack_connect  "Non-Timeline:DrumManami/out-1"  "Non-Mixer/DrumManami:in-1"      &
+jack_connect  "Non-Timeline:DrumManami/out-2"  "Non-Mixer/DrumManami:in-2"      &
+jack_connect  "Non-Timeline:DrumEllo/out-1"  "Non-Mixer/DrumEllo:in-1"      &
+jack_connect  "Non-Timeline:DrumEllo/out-2"  "Non-Mixer/DrumEllo:in-2"      &
 jack_connect  "Non-Timeline:Drum/out-1"  "Non-Mixer/Drum:in-1"      &
 jack_connect  "Non-Timeline:Voice/out-1"  "Non-Mixer/Voice:in-1"      &
 jack_connect  "Non-Timeline:Voice2/out-1"  "Non-Mixer/Voice2:in-1"      &
@@ -161,7 +186,37 @@ jack_connect  "Non-Timeline:ZynArtBamba/out-2" "Non-Mixer/ZynArtBamba:in-2"    &
 jack_connect  "Non-Timeline:Guitarix/out-1"  "Non-Mixer/Guitarix:in-1"    &
 jack_connect  "Non-Timeline:Guitarix/out-2"  "Non-Mixer/Guitarix:in-2"    &
 
+#######################################################################################
+# qtractor to non-mixer 
+#######################################################################################
+#jack_connect  "Non-Timeline:DrumManami/out-1"  "Non-Mixer/DrumManami:in-1"      &
+#jack_connect  "Non-Timeline:DrumManami/out-2"  "Non-Mixer/DrumManami:in-2"      &
+#jack_connect  "Non-Timeline:DrumEllo/out-1"  "Non-Mixer/DrumEllo:in-1"      &
+#jack_connect  "Non-Timeline:DrumEllo/out-2"  "Non-Mixer/DrumEllo:in-2"      &
+jack_connect  "Qtractor:Drum/out_1"  "Non-Mixer/Drum:in-1"      &
+jack_connect  "Qtractor:Voice/out_1"  "Non-Mixer/Voice:in-1"      &
+#jack_connect  "Non-Timeline:Voice2/out-1"  "Non-Mixer/Voice2:in-1"      &
+#jack_connect  "Non-Timeline:VoiceTube/out-1" "Non-Mixer/VoiceTube:in-1"    &
+jack_connect  "Qtractor:Bass/out_1"  "Non-Mixer/Bass:in-1"      &
+#jack_connect  "Non-Timeline:Guitar/out-1"  "Non-Mixer/Guitar:in-1"      &
+jack_connect  "Qtractor:Bass/out_1"  "Non-Mixer/Bass:in-1"      &
+#jack_connect  "Non-Timeline:Piano/out-1" "Non-Mixer/Piano:in-1"    &
+#jack_connect  "Non-Timeline:Piano/out-2"  "Non-Mixer/Piano:in-2"    &
 
+
+#  linuxsampler  :: qtractor to Non-Mixer
+jack_connect  "Qtractor:LinSamplr/out_1"   "Non-Mixer/LinSamplr:in-1"    &
+jack_connect  "Qtractor:LinSamplr/out_2" "Non-Mixer/LinSamplr:in-2"    &
+jack_connect  "Qtractor:LinSamplr2/out_1" "Non-Mixer/LinSamplr2:in-1"    &
+jack_connect  "Qtractor:LinSamplr2/out_2" "Non-Mixer/LinSamplr2:in-2"    &
+
+#  zynaddsubfx  :: Non-Timeline to Non-Mixer
+jack_connect  "Qtractor:ZynArtBamba/out_1"  "Non-Mixer/ZynArtBamba:in-1"    &
+jack_connect  "Qtractor:ZynArtBamba/out_2" "Non-Mixer/ZynArtBamba:in-2"    &
+
+# disconnnect master qtractor
+jack_disconnect  "Qtractor:Master/out_1"  "system:playback_1"    &
+jack_disconnect  "Qtractor:Master/out_2" "system:playback_2"    &
 
 ######################################################################################
 #   non-mixer intern from left to right
@@ -187,33 +242,52 @@ jack_connect  "Non-Mixer/Piano:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 jack_connect  "Non-Mixer/Piano:out-1"       "Non-Mixer/Main Out:in-1"     &
 jack_connect  "Non-Mixer/Piano:out-2"       "Non-Mixer/Main Out:in-2"     &
 
-jack_connect  "Non-Mixer/LinSamplr:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
-jack_connect  "Non-Mixer/LinSamplr:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
-jack_connect  "Non-Mixer/LinSamplr:out-1"       "Non-Mixer/Main Out:in-1"     &
-jack_connect  "Non-Mixer/LinSamplr:out-2"       "Non-Mixer/Main Out:in-2"     &
+#jack_connect  "Non-Mixer/LinSamplr:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+#jack_connect  "Non-Mixer/LinSamplr:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+#jack_connect  "Non-Mixer/LinSamplr:out-1"       "Non-Mixer/Main Out:in-1"     &
+#jack_connect  "Non-Mixer/LinSamplr:out-2"       "Non-Mixer/Main Out:in-2"     &
 
-jack_connect  "Non-Mixer/LinSamplr2:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
-jack_connect  "Non-Mixer/LinSamplr2:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
-jack_connect  "Non-Mixer/LinSamplr2:out-1"       "Non-Mixer/Main Out:in-1"     &
-jack_connect  "Non-Mixer/LinSamplr2:out-2"       "Non-Mixer/Main Out:in-2"     &
+#jack_connect  "Non-Mixer/LinSamplr2:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+#jack_connect  "Non-Mixer/LinSamplr2:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+#jack_connect  "Non-Mixer/LinSamplr2:out-1"       "Non-Mixer/Main Out:in-1"     &
+#jack_connect  "Non-Mixer/LinSamplr2:out-2"       "Non-Mixer/Main Out:in-2"     &
 
 # to KeysAll
 jack_connect  "Non-Mixer/LinSamplr:out-1"       "Non-Mixer/KeysAll:in-1"     &
 jack_connect  "Non-Mixer/LinSamplr:out-2"       "Non-Mixer/KeysAll:in-2"     &
 jack_connect  "Non-Mixer/LinSamplr2:out-1"       "Non-Mixer/KeysAll:in-1"     &
 jack_connect  "Non-Mixer/LinSamplr2:out-2"       "Non-Mixer/KeysAll:in-2"     &
+jack_connect  "Non-Mixer/LinSamplr3:out-1"       "Non-Mixer/KeysAll:in-1"     &
+jack_connect  "Non-Mixer/LinSamplr3:out-2"       "Non-Mixer/KeysAll:in-2"     &
 jack_connect  "Non-Mixer/ZynArtBamba:out-1"       "Non-Mixer/KeysAll:in-1"     &
 jack_connect  "Non-Mixer/ZynArtBamba:out-2"       "Non-Mixer/KeysAll:in-2"     &
 
-jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
-jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
-jack_connect  "Non-Mixer/ZynArtBamba:out-1"       "Non-Mixer/Main Out:in-1"     &
-jack_connect  "Non-Mixer/ZynArtBamba:out-2"       "Non-Mixer/Main Out:in-2"     &
+
+jack_connect  "Non-Mixer/KeysAll:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/KeysAll:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/KeysAll:out-1"       "Non-Mixer/Main Out:in-1"     &
+jack_connect  "Non-Mixer/KeysAll:out-2"       "Non-Mixer/Main Out:in-2"     &
+
+
+#jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+#jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+#jack_connect  "Non-Mixer/ZynArtBamba:out-1"       "Non-Mixer/Main Out:in-1"     &
+#jack_connect  "Non-Mixer/ZynArtBamba:out-2"       "Non-Mixer/Main Out:in-2"     &
 
 jack_connect  "Non-Mixer/Drum:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 jack_connect  "Non-Mixer/Drum:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 jack_connect  "Non-Mixer/Drum:out-1"       "Non-Mixer/Main Out:in-1"     &
 jack_connect  "Non-Mixer/Drum:out-2"       "Non-Mixer/Main Out:in-2"     &
+
+jack_connect  "Non-Mixer/DrumEllo:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/DrumEllo:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/DrumEllo:out-1"       "Non-Mixer/Main Out:in-1"     &
+jack_connect  "Non-Mixer/DrumEllo:out-2"       "Non-Mixer/Main Out:in-2"     &
+
+jack_connect  "Non-Mixer/DrumManami:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/DrumManami:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/DrumManami:out-1"       "Non-Mixer/Main Out:in-1"     &
+jack_connect  "Non-Mixer/DrumManami:out-2"       "Non-Mixer/Main Out:in-2"     &
 
 jack_connect  "Non-Mixer/Bass:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 jack_connect  "Non-Mixer/Bass:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
@@ -259,14 +333,14 @@ jack_connect  "Non-Mixer/Guitar:out-1"   gx_head_amp:in_0   &
 jack_connect "a2j:SWISSONIC EasyKeys61 [20] (capture): SWISSONIC EasyKeys61 MIDI 1" LinuxSampler:midi_in_0    &
 jack_connect "a2j:SWISSONIC EasyKeys61 [24] (capture): SWISSONIC EasyKeys61 MIDI 1" LinuxSampler:midi_in_0    &
 jack_connect "a2j:SWISSONIC EasyKeys61 [28] (capture): SWISSONIC EasyKeys61 MIDI 1" LinuxSampler:midi_in_0    &
-
+jack_connect "a2j:SWISSONIC EasyKeys61 [32] (capture): SWISSONIC EasyKeys61 MIDI 1" LinuxSampler:midi_in_0    &
 
 
 
 jack_connect "a2j:SWISSONIC EasyKeys61 [20] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi:midi in"     &
 jack_connect "a2j:SWISSONIC EasyKeys61 [24] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi:midi in"    &
 jack_connect "a2j:SWISSONIC EasyKeys61 [28] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi:midi in"    &
-
+jack_connect "a2j:SWISSONIC EasyKeys61 [32] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi:midi in"    &
 
 
 jack_connect "a2j:SWISSONIC EasyKeys61 [20] (capture): SWISSONIC EasyKeys61 MIDI 1" zynaddsubfx:midi_input     &

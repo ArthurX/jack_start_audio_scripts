@@ -49,6 +49,8 @@ def main():
                  ("Non-Mixer/Guitarix:out-2", "Non-Mixer/RobGuitarix:in-2"),
                  ("Non-Mixer/Drum:out-1", "Non-Mixer/RobDrum:in-1"),
                  ("Non-Mixer/Drum:out-2", "Non-Mixer/RobDrum:in-2"),
+                 ("Non-Mixer/DrumEllo:out-1", "Non-Mixer/RobDrumEllo:in-1"),
+                 ("Non-Mixer/DrumEllo:out-2", "Non-Mixer/RobDrumEllo:in-2"),
                  ("Non-Mixer/Main Out:out-1", "Non-Mixer/RobMainMix:in-1"),
                  ("Non-Mixer/Main Out:out-2", "Non-Mixer/RobMainMix:in-2"),
 
@@ -63,6 +65,8 @@ def main():
                  ("Non-Mixer/RobBass:out-2","Non-Mixer/RobPhone:in-2" ),
                  ("Non-Mixer/RobDrum:out-1","Non-Mixer/RobPhone:in-1" ),
                  ( "Non-Mixer/RobDrum:out-2", "Non-Mixer/RobPhone:in-2"),
+                 ("Non-Mixer/RobDrumEllo:out-1","Non-Mixer/RobPhone:in-1" ),
+                 ( "Non-Mixer/RobDrumEllo:out-2", "Non-Mixer/RobPhone:in-2"),
                  ( "Non-Mixer/RobMainMix:out-1", "Non-Mixer/RobPhone:in-1"),
                  ("Non-Mixer/RobMainMix:out-2", "Non-Mixer/RobPhone:in-2"),
 

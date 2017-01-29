@@ -45,6 +45,8 @@ def main():
                  ("Non-Mixer/Bass:out-2", "Non-Mixer/BassBass:in-2"),
                  ("Non-Mixer/Drum:out-1", "Non-Mixer/BassDrum:in-1"),
                  ("Non-Mixer/Drum:out-2", "Non-Mixer/BassDrum:in-2"),
+                 ("system:capture_15", "Non-Mixer/BassDrum:in-1"),
+                 ("system:capture_16", "Non-Mixer/BassDrum:in-2"),
                  ("Non-Mixer/Voice:out-1", "Non-Mixer/BassVoice:in-1"),
                  ("Non-Mixer/Voice:out-2", "Non-Mixer/BassVoice:in-2"),
                  ("Non-Mixer/Guitarix:out-1", "Non-Mixer/BassGuitarix:in-1"),
