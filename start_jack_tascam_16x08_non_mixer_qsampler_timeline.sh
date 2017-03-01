@@ -38,7 +38,7 @@ sleep 10
 
 
 sleep 10
-qtractor /home/arthurx/Audio_Rec_2016/2017/1/Wolbodo_7_Jan_2017/Qtrac/Wolbodo_2017.qtr &
+#qtractor /home/arthurx/Audio_Rec_2016/2017/1/Wolbodo_7_Jan_2017/Qtrac/Wolbodo_2017.qtr &
 
 sleep 10
 #/home/arthurx/Audio_Settings_Samples/Scripts/convert_osc_to_non_float.py  8080 8081 &
@@ -50,10 +50,9 @@ sleep 2
 non-mixer /home/arthurx/Audio_Rec_2016/work_dir/Non-Mixer/ & # --osc-port 8081 &
 sleep 2
 
-
 non-timeline /home/arthurx/Audio_Rec_2016/work_dir/ &
 
-
+sleep 10
 yoshimi --load-instrument="/usr/share/yoshimi/banks/Strings/0006-Saw Strings 6.xiz"  &
 #zynaddsubfx --load="/home/arthurx/Audio_Settings_Samples/Audio_Samples/ZynAdd_Presets/StringSaw6.xmz"	&
 
@@ -126,6 +125,9 @@ jack_connect  LinuxSampler:1 "Non-Timeline:LinSamplr/in-2"    &
 jack_connect  LinuxSampler:2 "Non-Timeline:LinSamplr2/in-1"    &
 jack_connect  LinuxSampler:3 "Non-Timeline:LinSamplr2/in-2"    &
 
+jack_connect  LinuxSampler:4 "Non-Timeline:LinSamplr2/in-1"    &
+jack_connect  LinuxSampler:5 "Non-Timeline:LinSamplr2/in-2"    &
+
 #############################################################################################
 #  yoshimi to non-mixer  non-timeline
 #########################################################################################################
@@ -178,6 +180,11 @@ jack_connect  "Non-Timeline:LinSamplr/out-2" "Non-Mixer/LinSamplr:in-2"    &
 jack_connect  "Non-Timeline:LinSamplr2/out-1" "Non-Mixer/LinSamplr2:in-1"    &
 jack_connect  "Non-Timeline:LinSamplr2/out-2" "Non-Mixer/LinSamplr2:in-2"    &
 
+jack_connect  "Non-Timeline:Keys2/out-1" "Non-Mixer/Keys2:in-1"    &
+jack_connect  "Non-Timeline:Keys2/out-2" "Non-Mixer/Keys2:in-2"    &
+jack_connect  "Non-Timeline:Keys3/out-1" "Non-Mixer/Keys3:in-1"    &
+jack_connect  "Non-Timeline:Keys3/out-2" "Non-Mixer/Keys3:in-2"    &
+
 #  zynaddsubfx  :: Non-Timeline to Non-Mixer
 jack_connect  "Non-Timeline:ZynArtBamba/out-1"  "Non-Mixer/ZynArtBamba:in-1"    &
 jack_connect  "Non-Timeline:ZynArtBamba/out-2" "Non-Mixer/ZynArtBamba:in-2"    &
@@ -217,6 +224,8 @@ jack_connect  "Qtractor:ZynArtBamba/out_2" "Non-Mixer/ZynArtBamba:in-2"    &
 # disconnnect master qtractor
 jack_disconnect  "Qtractor:Master/out_1"  "system:playback_1"    &
 jack_disconnect  "Qtractor:Master/out_2" "system:playback_2"    &
+jack_disconnect  "Qtractor:MixDown/out_1"  "system:playback_1"    &
+jack_disconnect  "Qtractor:MixDown/out_2" "system:playback_2"    &
 
 ######################################################################################
 #   non-mixer intern from left to right
@@ -268,6 +277,17 @@ jack_connect  "Non-Mixer/KeysAll:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 jack_connect  "Non-Mixer/KeysAll:out-1"       "Non-Mixer/Main Out:in-1"     &
 jack_connect  "Non-Mixer/KeysAll:out-2"       "Non-Mixer/Main Out:in-2"     &
 
+# Keys2 & Keys3
+jack_connect  "Non-Mixer/Keys2:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/Keys2:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/Keys2:out-1"       "Non-Mixer/Main Out:in-1"     &
+jack_connect  "Non-Mixer/Keys2:out-2"       "Non-Mixer/Main Out:in-2"     &
+
+jack_connect  "Non-Mixer/Keys3:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/Keys3:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/Keys3:out-1"       "Non-Mixer/Main Out:in-1"     &
+jack_connect  "Non-Mixer/Keys3:out-2"       "Non-Mixer/Main Out:in-2"     &
+
 
 #jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 #jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
@@ -313,7 +333,7 @@ jack_connect  "Non-Mixer/Main Out:out-2"   "Non-Mixer/HeadPhone:in-2"   &
 # from mixer to net, timeline, guitarix
 ##################################################################################################
 
-#  mixer :: net
+#    mixer :: net
 jack_connect   "Non-Mixer/HeadPhone:out-1" system:playback_1  &
 jack_connect   "Non-Mixer/HeadPhone:out-2" system:playback_2  &
 
@@ -321,9 +341,21 @@ jack_connect   "Non-Mixer/HeadPhone:out-2" system:playback_2  &
 jack_connect   "Non-Mixer/Main Out:out-1" "Non-Timeline:MainOut/in-1"   &
 jack_connect   "Non-Mixer/Main Out:out-2" "Non-Timeline:MainOut/in-2"   &
 
+# keys2, keys3 :: timeline
+jack_connect  "Non-Mixer/Keys2/Aux-B:out-1"       "Non-Timeline:Keys2/in-1"     &
+jack_connect  "Non-Mixer/Keys2/Aux-B:out-2"       "Non-Timeline:Keys2/in-2"     &
+jack_connect  "Non-Mixer/Keys3/Aux-B:out-1"       "Non-Timeline:Keys3/in-1"     &
+jack_connect  "Non-Mixer/Keys3/Aux-B:out-2"       "Non-Timeline:Keys3/in-2"     &
+
+#    mixer  ::  qtractor
+jack_connect   "Non-Mixer/Main Out:out-1" "Qtractor:MixDow/in_1"   &
+jack_connect   "Non-Mixer/Main Out:out-2" "Qtractor:MixDow/in_2"   &
+
 #    mixer  ::   guitarix
 jack_connect  "Non-Mixer/Voice:aux-B/out-1"    gx_head_amp:in_0   &
 jack_connect  "Non-Mixer/Guitar:out-1"   gx_head_amp:in_0   &
+
+
 
 
 #############################################################################################

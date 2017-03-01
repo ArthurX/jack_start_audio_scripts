@@ -82,7 +82,7 @@ def main():
 
 
 
-  new_timeline_size = 593090031    # +- 500 MB          #   293090031 = 260MB
+  new_timeline_size = 93090031    # +- 500 MB          #   293090031 = 260MB
 
 
   today = datetime.date.today()
