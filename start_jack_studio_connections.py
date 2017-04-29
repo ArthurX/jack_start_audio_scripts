@@ -33,9 +33,7 @@ def make_jack_disconnect(connections):
 
 def main():
   studio_connections = [("Non-Mixer/HeadPhone:out-1", "system:playback_1"),
-                 ("Non-Mixer/HeadPhone:out-2", "system:playback_2"),
-                 ("Non-Mixer/HeadPhone:out-1", "system:playback_7"),
-                 ("Non-Mixer/HeadPhone:out-2", "system:playback_8")]
+                 ("Non-Mixer/HeadPhone:out-2", "system:playback_2")]
 
 
 
