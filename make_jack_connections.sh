@@ -13,6 +13,7 @@ jack_connect  system:capture_2 "Non-Mixer/Voice2:in-1"      &
 jack_connect  system:capture_7 "Non-Mixer/VoiceTube:in-1"      &
 jack_connect  system:capture_10 "Non-Mixer/Bass:in-1"      &
 jack_connect  system:capture_9 "Non-Mixer/Guitar:in-1"      &
+jack_connect  system:capture_9 "Non-Mixer/GuitarClean:in-1"      &
 #jack_connect  system:capture_11 "Non-Mixer/Piano:in-1"    &
 #jack_connect  system:capture_12 "Non-Mixer/Piano:in-2"    &
 jack_connect  system:capture_13 "Non-Mixer/DrumManami:in-1"      &
@@ -108,12 +109,21 @@ jack_connect  "Non-Timeline:LinSamplr/out-2" "Non-Mixer/LinSamplr:in-2"    &
 jack_connect  "Non-Timeline:LinSamplr2/out-1" "Non-Mixer/LinSamplr2:in-1"    &
 jack_connect  "Non-Timeline:LinSamplr2/out-2" "Non-Mixer/LinSamplr2:in-2"    &
 
+# Keys1,2,3  :: Non-Timeline to Non-Mixer
 jack_connect  "Non-Timeline:Keys1/out-1" "Non-Mixer/Keys1:in-1"    &
 jack_connect  "Non-Timeline:Keys1/out-2" "Non-Mixer/Keys1:in-2"    &
 jack_connect  "Non-Timeline:Keys2/out-1" "Non-Mixer/Keys2:in-1"    &
 jack_connect  "Non-Timeline:Keys2/out-2" "Non-Mixer/Keys2:in-2"    &
 jack_connect  "Non-Timeline:Keys3/out-1" "Non-Mixer/Keys3:in-1"    &
 jack_connect  "Non-Timeline:Keys3/out-2" "Non-Mixer/Keys3:in-2"    &
+
+# Guitar1,2,3  :: Non-Timeline to Non-Mixer
+jack_connect  "Non-Timeline:Guitar1/out-1" "Non-Mixer/Guitar1:in-1"    &
+jack_connect  "Non-Timeline:Guitar1/out-2" "Non-Mixer/Guitar1:in-2"    &
+jack_connect  "Non-Timeline:Guitar2/out-1" "Non-Mixer/Guitar2:in-1"    &
+jack_connect  "Non-Timeline:Guitar2/out-2" "Non-Mixer/Guitar2:in-2"    &
+jack_connect  "Non-Timeline:Guitar3/out-1" "Non-Mixer/Guitar3:in-1"    &
+jack_connect  "Non-Timeline:Guitar3/out-2" "Non-Mixer/Guitar3:in-2"    &
 
 #  zynaddsubfx  :: Non-Timeline to Non-Mixer
 jack_connect  "Non-Timeline:ZynArtBamba/out-1"  "Non-Mixer/ZynArtBamba:in-1"    &
@@ -257,11 +267,37 @@ jack_connect  "Non-Mixer/Bass:out-2"       "Non-Mixer/Main Out:in-2"     &
 #jack_connect  "Non-Mixer/Guitar:out-1"       "Non-Mixer/Main Out:in-1"     &
 #jack_connect  "Non-Mixer/Guitar:out-2"       "Non-Mixer/Main Out:in-2"     &
 
-jack_connect  "Non-Mixer/Guitarix:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
-jack_connect  "Non-Mixer/Guitarix:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
-jack_connect  "Non-Mixer/Guitarix:out-1"       "Non-Mixer/Main Out:in-1"  &
-jack_connect  "Non-Mixer/Guitarix:out-2"       "Non-Mixer/Main Out:in-2"  &
+# Guitarix  to Guitar1 etc
+jack_connect  "Non-Mixer/Guitarix:aux-A/out-1" "Non-Mixer/Guitar1:in-1"     &
+jack_connect  "Non-Mixer/Guitarix:aux-A/out-2" "Non-Mixer/Guitar1:in-2"     &
+jack_connect  "Non-Mixer/Guitarix:aux-B/out-1" "Non-Mixer/Guitar2:in-1"     &
+jack_connect  "Non-Mixer/Guitarix:aux-B/out-2" "Non-Mixer/Guitar2:in-2"     &
+jack_connect  "Non-Mixer/Guitarix:aux-C/out-1" "Non-Mixer/Guitar3:in-1"     &
+jack_connect  "Non-Mixer/Guitarix:aux-C/out-2" "Non-Mixer/Guitar3:in-2"     &
 
+# GuitarClean to Guitar1 etc
+jack_connect  "Non-Mixer/GuitarClean:aux-A/out-1" "Non-Mixer/Guitar1:in-1"     &
+jack_connect  "Non-Mixer/GuitarClean:aux-A/out-2" "Non-Mixer/Guitar1:in-2"     &
+jack_connect  "Non-Mixer/GuitarClean:aux-B/out-1" "Non-Mixer/Guitar2:in-1"     &
+jack_connect  "Non-Mixer/GuitarClean:aux-B/out-2" "Non-Mixer/Guitar2:in-2"     &
+jack_connect  "Non-Mixer/GuitarClean:aux-C/out-1" "Non-Mixer/Guitar3:in-1"     &
+jack_connect  "Non-Mixer/GuitarClean:aux-C/out-2" "Non-Mixer/Guitar3:in-2"     &
+
+# Guitar1
+jack_connect  "Non-Mixer/Guitar1:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/Guitar1:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/Guitar1:out-1"       "Non-Mixer/Main Out:in-1"  &
+jack_connect  "Non-Mixer/Guitar1:out-2"       "Non-Mixer/Main Out:in-2"  &
+# Guitar2
+jack_connect  "Non-Mixer/Guitar2:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/Guitar2:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/Guitar2:out-1"       "Non-Mixer/Main Out:in-1"  &
+jack_connect  "Non-Mixer/Guitar2:out-2"       "Non-Mixer/Main Out:in-2"  &
+# Guitar3
+jack_connect  "Non-Mixer/Guitar3:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/Guitar3:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/Guitar3:out-1"       "Non-Mixer/Main Out:in-1"  &
+jack_connect  "Non-Mixer/Guitar3:out-2"       "Non-Mixer/Main Out:in-2"  &
 
 # Zita Verb
 jack_connect  "Non-Mixer/ZitaVerb:aux-A/out-1"   "Non-Mixer/HeadPhone:in-1" &
@@ -275,7 +311,7 @@ jack_connect  "Non-Mixer/Main Out:out-1"   "Non-Mixer/HeadPhone:in-1"   &
 jack_connect  "Non-Mixer/Main Out:out-2"   "Non-Mixer/HeadPhone:in-2"   &
 
 ############################################################################################
-# from mixer to net, timeline, guitarix
+# from mixer   to timeline, to net,   to guitarix
 ##################################################################################################
 
 #    mixer :: net
@@ -293,6 +329,14 @@ jack_connect  "Non-Mixer/Keys2:aux-B/out-1"       "Non-Timeline:Keys2/in-1"     
 jack_connect  "Non-Mixer/Keys2:aux-B/out-2"       "Non-Timeline:Keys2/in-2"     &
 jack_connect  "Non-Mixer/Keys3:aux-B/out-1"       "Non-Timeline:Keys3/in-1"     &
 jack_connect  "Non-Mixer/Keys3:aux-B/out-2"       "Non-Timeline:Keys3/in-2"     &
+
+# Guitar1,2,3    :: timeline
+jack_connect  "Non-Mixer/Guitar1:aux-B/out-1"       "Non-Timeline:Guitar1/in-1"     &
+jack_connect  "Non-Mixer/Guitar1:aux-B/out-2"       "Non-Timeline:Guitar1/in-2"     &
+jack_connect  "Non-Mixer/Guitar2:aux-B/out-1"       "Non-Timeline:Guitar2/in-1"     &
+jack_connect  "Non-Mixer/Guitar2:aux-B/out-2"       "Non-Timeline:Guitar2/in-2"     &
+jack_connect  "Non-Mixer/Guitar3:aux-B/out-1"       "Non-Timeline:Guitar3/in-1"     &
+jack_connect  "Non-Mixer/Guitar3:aux-B/out-2"       "Non-Timeline:Guitar3/in-2"     &
 
 #    mixer  ::  qtractor
 jack_connect   "Non-Mixer/Main Out:out-1" "Qtractor:MixDow/in_1"   &

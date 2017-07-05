@@ -1,0 +1,13 @@
+Settings
+	Follow Playhead
+		true
+	Center Playhead
+		true
+	Snap to
+		Bars
+	Magnetic snap
+		true
+	Capture Format
+		FLAC
+	Playback Latency Compensation
+		false
