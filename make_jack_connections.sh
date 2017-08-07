@@ -67,6 +67,12 @@ jack_connect  yoshimi:right "Non-Mixer/ZynArtBamba:in-2"    &
 jack_connect  yoshimi:left "Non-Timeline:ZynArtBamba/in-1"    &
 jack_connect  yoshimi:right "Non-Timeline:ZynArtBamba/in-2"    &
 
+jack_connect  yoshimi-01:left "Non-Mixer/ZynArtBamba:in-1"    &
+jack_connect  yoshimi-01:right "Non-Mixer/ZynArtBamba:in-2"    &
+#  zynaddsubfx to non-timeline
+jack_connect  yoshimi-01:left "Non-Timeline:ZynArtBamba/in-1"    &
+jack_connect  yoshimi-01:right "Non-Timeline:ZynArtBamba/in-2"    &
+
 #############################################################################################
 #  zynaddsubfx to non-mixer  non-timeline
 #########################################################################################################
@@ -380,6 +386,11 @@ jack_connect "a2j:Swissonic 88 [24] (capture): Swissonic 88 MIDI 1" "yoshimi:mid
 jack_connect "a2j:Swissonic 88 [28] (capture): Swissonic 88 MIDI 1" "yoshimi:midi in"    &
 jack_connect "a2j:Swissonic 88 [32] (capture): Swissonic 88 MIDI 1" "yoshimi:midi in"    &
 
+jack_connect "a2j:Swissonic 88 [20] (capture): Swissonic 88 MIDI 1" "yoshimi-01:midi in"     &
+jack_connect "a2j:Swissonic 88 [24] (capture): Swissonic 88 MIDI 1" "yoshimi-01:midi in"    &
+jack_connect "a2j:Swissonic 88 [28] (capture): Swissonic 88 MIDI 1" "yoshimi-01:midi in"    &
+jack_connect "a2j:Swissonic 88 [32] (capture): Swissonic 88 MIDI 1" "yoshimi-01:midi in"    &
+
 # RoMIO II
 jack_connect "a2j:RoMIO II [28] (capture): RoMIO II MIDI 1" LinuxSampler:midi_in_0    &
 jack_connect "a2j:RoMIO II [20] (capture): RoMIO II MIDI 1" LinuxSampler:midi_in_0   &
@@ -407,9 +418,12 @@ jack_connect "a2j:USB Axiom 49 [32] (capture): USB Axiom 49 MIDI 1" "yoshimi:mid
 ########################################################################################
 #### jack mixer output to tascam
 ########################################################################################
-
+sleep 5
 /home/arthurx/Audio_Settings_Samples/Scripts/start_jack_studio_connections.py studio &
+sleep 5
 /home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_rob.py  &
+sleep 5
 /home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Bass.py  &
+sleep 3
 /home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Horn.py  &
 

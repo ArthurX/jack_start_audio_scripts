@@ -3,6 +3,14 @@
 
 # from https://wiki.archlinux.org/index.php/JACK_Audio_Connection_Kit
 
+
+killall jack
+killall qsampler 
+killall qtractor 
+killall yoshimi
+
+sleep 10
+
 jack_control start
 
 jack_control eps realtime true
@@ -20,11 +28,9 @@ jack_control dps period 128
 # -i-o for midi
 
  
-sleep 10
-killall qsampler 
-killall qtractor 
 
-sleep 20
+ 
+sleep 10
 qsampler /home/arthurx/Audio_Settings_Samples/Audio_Samples/Grand_Strings.lscp &
 #qsampler /home/arthurx/Audio_Settings_Samples/Audio_Samples/Grand_Strings_Back_Up.lscp &
 
