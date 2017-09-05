@@ -35,13 +35,11 @@ qsampler /home/arthurx/Audio_Settings_Samples/Audio_Samples/Grand_Strings.lscp &
 #qsampler /home/arthurx/Audio_Settings_Samples/Audio_Samples/Grand_Strings_Back_Up.lscp &
 
 sleep 10
-guitarix &
+#guitarix &
 sleep 10
 /usr/bin/a2jmidid -e &
-#sleep 10
-#qjackctl &
-#sleep 10
-#guitarix &
+
+
 #qmidiroute /home/arthurx/Audio_Settings_Samples/Scripts/foot_con_soft_64_to_67.qmr &
 
 

@@ -173,6 +173,8 @@ jack_disconnect  "Qtractor:Master/out_2" "system:playback_2"    &
 jack_disconnect  "Qtractor:MixDown/out_1"  "system:playback_1"    &
 jack_disconnect  "Qtractor:MixDown/out_2" "system:playback_2"    &
 
+sleep 4
+
 ######################################################################################
 #   non-mixer intern from left to right
 ######################################################################################
@@ -226,6 +228,8 @@ jack_connect  "Non-Mixer/KeysAll:aux-C/out-1" "Non-Mixer/Keys3:in-1"     &
 jack_connect  "Non-Mixer/KeysAll:aux-C/out-2" "Non-Mixer/Keys3:in-2"     &
 #jack_connect  "Non-Mixer/KeysAll:out-1"       "Non-Mixer/Main Out:in-1"     &
 #jack_connect  "Non-Mixer/KeysAll:out-2"       "Non-Mixer/Main Out:in-2"     &
+
+sleep 4 
 
 # Keys1 Keys2 & Keys3
 jack_connect  "Non-Mixer/Keys1:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
@@ -316,6 +320,8 @@ jack_connect  "Non-Mixer/ZitaVerb:aux-B/out-2"   "Non-Mixer/Main Out:in-2"   &
 jack_connect  "Non-Mixer/Main Out:out-1"   "Non-Mixer/HeadPhone:in-1"   &
 jack_connect  "Non-Mixer/Main Out:out-2"   "Non-Mixer/HeadPhone:in-2"   &
 
+sleep 4
+
 ############################################################################################
 # from mixer   to timeline, to net,   to guitarix
 ##################################################################################################
@@ -365,10 +371,17 @@ jack_connect "a2j:SWISSONIC EasyKeys61 [24] (capture): SWISSONIC EasyKeys61 MIDI
 jack_connect "a2j:SWISSONIC EasyKeys61 [28] (capture): SWISSONIC EasyKeys61 MIDI 1" LinuxSampler:midi_in_0    &
 jack_connect "a2j:SWISSONIC EasyKeys61 [32] (capture): SWISSONIC EasyKeys61 MIDI 1" LinuxSampler:midi_in_0    &
 
+
 jack_connect "a2j:SWISSONIC EasyKeys61 [20] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi:midi in"     &
 jack_connect "a2j:SWISSONIC EasyKeys61 [24] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi:midi in"    &
 jack_connect "a2j:SWISSONIC EasyKeys61 [28] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi:midi in"    &
 jack_connect "a2j:SWISSONIC EasyKeys61 [32] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi:midi in"    &
+
+
+jack_connect "a2j:SWISSONIC EasyKeys61 [20] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi-01:midi in"     &
+jack_connect "a2j:SWISSONIC EasyKeys61 [24] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi-01:midi in"   &
+jack_connect "a2j:SWISSONIC EasyKeys61 [28] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi-01:midi in"  &
+jack_connect "a2j:SWISSONIC EasyKeys61 [32] (capture): SWISSONIC EasyKeys61 MIDI 1" "yoshimi-01:midi in"   &
 
 jack_connect "a2j:SWISSONIC EasyKeys61 [20] (capture): SWISSONIC EasyKeys61 MIDI 1" zynaddsubfx:midi_input     &
 jack_connect "a2j:SWISSONIC EasyKeys61 [24] (capture): SWISSONIC EasyKeys61 MIDI 1" zynaddsubfx:midi_input     &
@@ -381,10 +394,12 @@ jack_connect "a2j:Swissonic 88 [24] (capture): Swissonic 88 MIDI 1" LinuxSampler
 jack_connect "a2j:Swissonic 88 [28] (capture): Swissonic 88 MIDI 1" LinuxSampler:midi_in_0    &
 jack_connect "a2j:Swissonic 88 [32] (capture): Swissonic 88 MIDI 1" LinuxSampler:midi_in_0    &
 
+
 jack_connect "a2j:Swissonic 88 [20] (capture): Swissonic 88 MIDI 1" "yoshimi:midi in"     &
 jack_connect "a2j:Swissonic 88 [24] (capture): Swissonic 88 MIDI 1" "yoshimi:midi in"    &
 jack_connect "a2j:Swissonic 88 [28] (capture): Swissonic 88 MIDI 1" "yoshimi:midi in"    &
 jack_connect "a2j:Swissonic 88 [32] (capture): Swissonic 88 MIDI 1" "yoshimi:midi in"    &
+
 
 jack_connect "a2j:Swissonic 88 [20] (capture): Swissonic 88 MIDI 1" "yoshimi-01:midi in"     &
 jack_connect "a2j:Swissonic 88 [24] (capture): Swissonic 88 MIDI 1" "yoshimi-01:midi in"    &
@@ -402,6 +417,7 @@ jack_connect "a2j:RoMIO II [20] (capture): RoMIO II MIDI 1" "yoshimi:midi in"  &
 
 
 # Axion 49
+
 jack_connect "a2j:USB Axiom 49 [20] (capture): USB Axiom 49 MIDI 1" LinuxSampler:midi_in_0    &
 jack_connect "a2j:USB Axiom 49 [24] (capture): USB Axiom 49 MIDI 1" LinuxSampler:midi_in_0    &
 jack_connect "a2j:USB Axiom 49 [28] (capture): USB Axiom 49 MIDI 1" LinuxSampler:midi_in_0    &
@@ -411,6 +427,7 @@ jack_connect "a2j:USB Axiom 49 [20] (capture): USB Axiom 49 MIDI 1" "yoshimi:mid
 jack_connect "a2j:USB Axiom 49 [24] (capture): USB Axiom 49 MIDI 1" "yoshimi:midi in"    &
 jack_connect "a2j:USB Axiom 49 [28] (capture): USB Axiom 49 MIDI 1" "yoshimi:midi in"    &
 jack_connect "a2j:USB Axiom 49 [32] (capture): USB Axiom 49 MIDI 1" "yoshimi:midi in"    &
+
 #jack_connect   system:midi_capture_1     LinuxSampler:midi_in_0        &
 #jack_connect   system:midi_capture_1     zynaddsubfx:midi_input       &
 

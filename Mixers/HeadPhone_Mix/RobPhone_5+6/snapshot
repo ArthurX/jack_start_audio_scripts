@@ -1,10 +1,10 @@
 {
 	Mixer_Strip 0x1 create :name "RobVoice" :width "narrow" :tab "fader" :color 1092853703 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
 	Chain 0x2 create :strip 0x1 :tab "chain"
-	JACK_Module 0x3 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x2 :active 1
+	JACK_Module 0x3 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x2 :active 1
 	Gain_Module 0x4 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x2 :active 1
 	Meter_Module 0x5 create :is_default 1 :chain 0x2 :active 1
-	JACK_Module 0x6 create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0x2 :active 1
+	JACK_Module 0x6 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x2 :active 1
 	Mixer_Strip 0x7 create :name "RobPiano" :width "narrow" :tab "fader" :color 244864971 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
 	Chain 0x8 create :strip 0x7 :tab "chain"
 	JACK_Module 0x9 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x8 :active 1
@@ -13,16 +13,16 @@
 	JACK_Module 0xC create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x8 :active 1
 	Mixer_Strip 0x25 create :name "RobGuitarix" :width "narrow" :tab "fader" :color 424238335 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
 	Chain 0x26 create :strip 0x25 :tab "chain"
-	JACK_Module 0x27 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x26 :active 1
+	JACK_Module 0x27 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x26 :active 1
 	Gain_Module 0x28 create :parameter_values "-4.000000:1.000000" :is_default 1 :chain 0x26 :active 1
 	Meter_Module 0x29 create :is_default 1 :chain 0x26 :active 1
-	JACK_Module 0x2A create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0x26 :active 1
+	JACK_Module 0x2A create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x26 :active 1
 	Mixer_Strip 0x2B create :name "RobBass" :width "narrow" :tab "fader" :color 719885386 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
 	Chain 0x2C create :strip 0x2B :tab "chain"
-	JACK_Module 0x2D create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x2C :active 1
+	JACK_Module 0x2D create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x2C :active 1
 	Gain_Module 0x2E create :parameter_values "3.000000:1.000000" :is_default 1 :chain 0x2C :active 1
 	Meter_Module 0x2F create :is_default 1 :chain 0x2C :active 1
-	JACK_Module 0x30 create :parameter_values "1.000000:0.000000" :is_default 1 :chain 0x2C :active 1
+	JACK_Module 0x30 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x2C :active 1
 	Mixer_Strip 0xD create :name "RobDrum" :width "narrow" :tab "fader" :color 35700880 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
 	Chain 0xE create :strip 0xD :tab "chain"
 	JACK_Module 0xF create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0xE :active 1

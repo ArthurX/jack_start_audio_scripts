@@ -47,8 +47,8 @@ def main():
                  ("Non-Mixer/Drum:out-2", "Non-Mixer/HornDrum:in-2"),
                  ("Non-Mixer/DrumEllo:out-1", "Non-Mixer/HornDrumEllo:in-1"),
                  ("Non-Mixer/DrumEllo:out-2", "Non-Mixer/HornDrumEllo:in-2"),
-                 ("Non-Mixer/Voice1:out-1", "Non-Mixer/HornVoice1:in-1"),
-                 ("Non-Mixer/Voice1:out-2", "Non-Mixer/HornVoice1:in-2"),
+                 ("Non-Mixer/Voice:out-1", "Non-Mixer/HornVoice:in-1"),
+                 ("Non-Mixer/Voice:out-2", "Non-Mixer/HornVoice:in-2"),
                  ("Non-Mixer/Guitarix:out-1", "Non-Mixer/HornGuitarix:in-1"),
                  ("Non-Mixer/Guitarix:out-2", "Non-Mixer/HornGuitarix:in-2"),
                  ("Non-Mixer/Main Out:out-1", "Non-Mixer/HornMainMix:in-1"),
@@ -79,7 +79,7 @@ def main():
 
   make_jack_connect(Rob_connections)
 
-  print "piano to output 3 and 4 \n voice  to  5   \n  drum   to  6  \n zita verb to 7 8"
+  print "Horn Mixer to 7 8"
 
 
 if __name__ == '__main__':
