@@ -21,6 +21,9 @@ jack_connect  system:capture_14 "Non-Mixer/DrumManami:in-2"      &
 jack_connect  system:capture_15 "Non-Mixer/DrumEllo:in-1"      &
 jack_connect  system:capture_16 "Non-Mixer/DrumEllo:in-2"      &
 
+# conect GxtTuner
+jack_connect  system:capture_9 "gxtuner:in_0"      &
+
 
 # connect net audio inputs to non-timeline
 #######################################################################################
@@ -436,11 +439,12 @@ jack_connect "a2j:USB Axiom 49 [32] (capture): USB Axiom 49 MIDI 1" "yoshimi:mid
 #### jack mixer output to tascam
 ########################################################################################
 sleep 5
-/home/arthurx/Audio_Settings_Samples/Scripts/start_jack_studio_connections.py studio &
+/home/arthurx/Audio_Settings_Samples/Scripts/make_jack_output_connections_to_tascam.py connect &
 sleep 5
 /home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_rob.py  &
 sleep 5
 /home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Bass.py  &
-sleep 3
-/home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Horn.py  &
+sleep 5
+python /home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Horn.py  &
+
 

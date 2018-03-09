@@ -37,7 +37,7 @@ def make_jack_disconnect(connections):
 
 
 def main():
-  Rob_connections = [
+  Horn_connections = [
                  # inputs
                  ("Non-Mixer/KeysAll:out-1", "Non-Mixer/HornPiano:in-1"),
                  ("Non-Mixer/KeysAll:out-2", "Non-Mixer/HornPiano:in-2"),
@@ -47,8 +47,10 @@ def main():
                  ("Non-Mixer/Drum:out-2", "Non-Mixer/HornDrum:in-2"),
                  ("Non-Mixer/DrumEllo:out-1", "Non-Mixer/HornDrumEllo:in-1"),
                  ("Non-Mixer/DrumEllo:out-2", "Non-Mixer/HornDrumEllo:in-2"),
-                 ("Non-Mixer/Voice:out-1", "Non-Mixer/HornVoice:in-1"),
-                 ("Non-Mixer/Voice:out-2", "Non-Mixer/HornVoice:in-2"),
+                 ("Non-Mixer/Voice:out-1", "Non-Mixer/HornVoice1:in-1"),
+                 ("Non-Mixer/Voice:out-2", "Non-Mixer/HornVoice1:in-2"),
+                 ("Non-Mixer/Voice2:out-1", "Non-Mixer/HornHorn:in-1"),
+                 ("Non-Mixer/Voice2:out-2", "Non-Mixer/HornHorn:in-2"),
                  ("Non-Mixer/Guitarix:out-1", "Non-Mixer/HornGuitarix:in-1"),
                  ("Non-Mixer/Guitarix:out-2", "Non-Mixer/HornGuitarix:in-2"),
                  ("Non-Mixer/Main Out:out-1", "Non-Mixer/HornMainMix:in-1"),
@@ -69,15 +71,16 @@ def main():
                  ( "Non-Mixer/HornVoice1:out-2", "Non-Mixer/HornPhone:in-2"),
                  ( "Non-Mixer/HornGuitarix:out-1", "Non-Mixer/HornPhone:in-1"),
                  ("Non-Mixer/HornGuitarix:out-2", "Non-Mixer/HornPhone:in-2"),
+                 ( "Non-Mixer/HornBass:out-1", "Non-Mixer/HornPhone:in-1"),
+                 ("Non-Mixer/HornBass:out-2", "Non-Mixer/HornPhone:in-2"),
 
-                  #outputs
-                 ("Non-Mixer/HornPhone:out-1", "system:playback_7"),
-                 ("Non-Mixer/HornPhone:out-2", "system:playback_8"),
+                  #outputs in make_jack_output_connections_to_tascam.py
+
                  ]
 
 
 
-  make_jack_connect(Rob_connections)
+  make_jack_connect(Horn_connections)
 
   print "Horn Mixer to 7 8"
 

@@ -70,9 +70,8 @@ def main():
                  ( "Non-Mixer/BassGuitarix:out-1", "Non-Mixer/BassPhone:in-1"),
                  ("Non-Mixer/BassGuitarix:out-2", "Non-Mixer/BassPhone:in-2"),
 
-                  #outputs
-                 ("Non-Mixer/BassPhone:out-1", "system:playback_3"),
-                 ("Non-Mixer/BassPhone:out-2", "system:playback_4"),
+                  #outputs in make_jack_output_connections_to_tascam.py
+
                  ]
 
 

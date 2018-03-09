@@ -40,7 +40,7 @@ sleep 10
 /usr/bin/a2jmidid -e &
 
 
-#qmidiroute /home/arthurx/Audio_Settings_Samples/Scripts/foot_con_soft_64_to_67.qmr &
+qmidiroute /home/arthurx/Audio_Settings_Samples/Scripts/Copy_Note_On_to_Channel2.qmr &
 
 
 sleep 10
@@ -60,12 +60,12 @@ sleep 2
 
 non-timeline /home/arthurx/Audio_Rec_2016/work_dir/ &
 
-sleep 10
+sleep 5
 yoshimi --load-instrument="/usr/share/yoshimi/banks/Strings/0006-Saw Strings 6.xiz"  &
 #zynaddsubfx --load="/home/arthurx/Audio_Settings_Samples/Audio_Samples/ZynAdd_Presets/StringSaw6.xmz"	&
 
 
-sleep 10
+sleep 5
 
 
 # set priority order for software under jack
@@ -78,12 +78,16 @@ for i in "${musicsoft[@]}"
 
 #schedtool -R -p 20 `pidof jackdbus`                      # example of the normal line
 
-#sleep 5
+sleep 5
 qjackctl &
-#sleep 30
+
+
+sleep 2
+gxtuner
 
 
 # to make all jack connections 
+
 source /home/arthurx/Audio_Settings_Samples/Scripts/make_jack_connections.sh  
 
 

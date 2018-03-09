@@ -70,9 +70,8 @@ def main():
                  ( "Non-Mixer/RobMainMix:out-1", "Non-Mixer/RobPhone:in-1"),
                  ("Non-Mixer/RobMainMix:out-2", "Non-Mixer/RobPhone:in-2"),
 
-                  #outputs
-                 ("Non-Mixer/RobPhone:out-1", "system:playback_5"),
-                 ("Non-Mixer/RobPhone:out-2", "system:playback_6"),
+                  #outputs  in make_jack_output_connections_to_tascam.py
+
                  ]
 
 
