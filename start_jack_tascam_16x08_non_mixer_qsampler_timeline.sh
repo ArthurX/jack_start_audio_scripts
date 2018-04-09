@@ -40,13 +40,13 @@ sleep 10
 /usr/bin/a2jmidid -e &
 
 
-qmidiroute /home/arthurx/Audio_Settings_Samples/Scripts/Copy_Note_On_to_Channel2.qmr &
+#qmidiroute /home/arthurx/Audio_Settings_Samples/Scripts/Copy_Note_On_to_Channel2.qmr &
 
 
-sleep 10
+sleep 5
 #qtractor /home/arthurx/Audio_Rec_2016/2017/1/Wolbodo_7_Jan_2017/Qtrac/Wolbodo_2017.qtr &
 
-sleep 10
+sleep 5
 #/home/arthurx/Audio_Settings_Samples/Scripts/convert_osc_to_non_float.py  8080 8081 &
 
 non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/RobPhone_5+6/ &
@@ -61,9 +61,9 @@ sleep 2
 non-timeline /home/arthurx/Audio_Rec_2016/work_dir/ &
 
 sleep 5
-yoshimi --load-instrument="/usr/share/yoshimi/banks/Strings/0006-Saw Strings 6.xiz"  &
+#yoshimi --load-instrument="/usr/share/yoshimi/banks/Strings/0006-Saw Strings 6.xiz"  &
 #zynaddsubfx --load="/home/arthurx/Audio_Settings_Samples/Audio_Samples/ZynAdd_Presets/StringSaw6.xmz"	&
-
+yoshimi --state="/home/arthurx/Audio_Settings_Samples/Scripts/Yoshimi/SawStrings6_1__fantasy_synth_2.state"
 
 sleep 5
 

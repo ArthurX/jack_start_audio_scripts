@@ -1,0 +1,88 @@
+<?xml version="1.1" encoding="utf-8"?>
+<rack><plugin type="wavetable" instance-name="Wavetable" output-index="3" midi-index="2">
+<preset bank="0" program="0" plugin="wavetable" name="">
+  <param name="o1wave" value="16" />
+  <param name="o1offset" value="0.2" />
+  <param name="o1trans" value="0" />
+  <param name="o1detune" value="6" />
+  <param name="o1level" value="0.0411796" />
+  <param name="o2wave" value="6" />
+  <param name="o2offset" value="0.4" />
+  <param name="o2trans" value="0" />
+  <param name="o2detune" value="-6" />
+  <param name="o2level" value="0.00575886" />
+  <param name="adsr_a" value="1" />
+  <param name="adsr_d" value="350" />
+  <param name="adsr_s" value="0.5" />
+  <param name="adsr_f" value="0" />
+  <param name="adsr_r" value="50" />
+  <param name="adsr_v" value="1" />
+  <param name="adsr2_a" value="1" />
+  <param name="adsr2_d" value="350" />
+  <param name="adsr2_s" value="0.5" />
+  <param name="adsr2_f" value="0" />
+  <param name="adsr2_r" value="50" />
+  <param name="adsr2_v" value="1" />
+  <param name="adsr3_a" value="1" />
+  <param name="adsr3_d" value="350" />
+  <param name="adsr3_s" value="0.5" />
+  <param name="adsr3_f" value="0" />
+  <param name="adsr3_r" value="50" />
+  <param name="adsr3_v" value="0" />
+  <param name="pbend_range" value="200" />
+  <param name="eg1amp" value="1" />
+  <param name="lfo1_rate" value="5" />
+  <param name="lfo2_rate" value="0.25" />
+  <var name="mod_matrix:0,0">Env 1</var>
+  <var name="mod_matrix:0,1">0..1</var>
+  <var name="mod_matrix:0,2">None</var>
+  <var name="mod_matrix:0,3">50</var>
+  <var name="mod_matrix:0,4">O1: Shift (%)</var>
+  <var name="mod_matrix:1,0">LFO 2</var>
+  <var name="mod_matrix:1,1">0..1</var>
+  <var name="mod_matrix:1,2">None</var>
+  <var name="mod_matrix:1,3">10</var>
+  <var name="mod_matrix:1,4">O1: Shift (%)</var>
+  <var name="mod_matrix:2,0">None</var>
+  <var name="mod_matrix:2,1">0..1</var>
+  <var name="mod_matrix:2,2">None</var>
+  <var name="mod_matrix:2,3">1</var>
+  <var name="mod_matrix:2,4">None</var>
+  <var name="mod_matrix:3,0">None</var>
+  <var name="mod_matrix:3,1">0..1</var>
+  <var name="mod_matrix:3,2">None</var>
+  <var name="mod_matrix:3,3">1</var>
+  <var name="mod_matrix:3,4">None</var>
+  <var name="mod_matrix:4,0">None</var>
+  <var name="mod_matrix:4,1">0..1</var>
+  <var name="mod_matrix:4,2">None</var>
+  <var name="mod_matrix:4,3">1</var>
+  <var name="mod_matrix:4,4">None</var>
+  <var name="mod_matrix:5,0">None</var>
+  <var name="mod_matrix:5,1">0..1</var>
+  <var name="mod_matrix:5,2">None</var>
+  <var name="mod_matrix:5,3">1</var>
+  <var name="mod_matrix:5,4">None</var>
+  <var name="mod_matrix:6,0">None</var>
+  <var name="mod_matrix:6,1">0..1</var>
+  <var name="mod_matrix:6,2">None</var>
+  <var name="mod_matrix:6,3">1</var>
+  <var name="mod_matrix:6,4">None</var>
+  <var name="mod_matrix:7,0">None</var>
+  <var name="mod_matrix:7,1">0..1</var>
+  <var name="mod_matrix:7,2">None</var>
+  <var name="mod_matrix:7,3">1</var>
+  <var name="mod_matrix:7,4">None</var>
+  <var name="mod_matrix:8,0">None</var>
+  <var name="mod_matrix:8,1">0..1</var>
+  <var name="mod_matrix:8,2">None</var>
+  <var name="mod_matrix:8,3">1</var>
+  <var name="mod_matrix:8,4">None</var>
+  <var name="mod_matrix:9,0">None</var>
+  <var name="mod_matrix:9,1">0..1</var>
+  <var name="mod_matrix:9,2">None</var>
+  <var name="mod_matrix:9,3">1</var>
+  <var name="mod_matrix:9,4">None</var>
+</preset>
+</plugin>
+</rack>
