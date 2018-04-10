@@ -340,8 +340,7 @@ jack_connect  "Non-Mixer/ZitaVerb:aux-A/out-2"   "Non-Mixer/HeadPhone:in-2"  &
 #jack_connect  "Non-Mixer/ZitaVerb:out-1"         "Non-Mixer/Main Out:in-1"   &
 #jack_connect  "Non-Mixer/ZitaVerb:out-2"         "Non-Mixer/Main Out:in-2"  &
 
-jack_connect  "Non-Mixer/Main Out:out-1"   "Non-Mixer/HeadPhone:in-1"   &
-jack_connect  "Non-Mixer/Main Out:out-2"   "Non-Mixer/HeadPhone:in-2"   &
+
 
 ############################################################################################
 #
@@ -384,15 +383,53 @@ jack_connect  "Non-Mixer/AllVocals:out-2"   "Non-Mixer/Main Out:in-2"   &
 
 sleep 4
 
-############################################################################################
-# from mixer   to timeline, to net,   to guitarix
-##################################################################################################
+##########################################################################################
+#
+#  To Out Headphone 3+4 5+6 7+8
+#
+##########################################################################################
 
-#    mixer :: net
+jack_connect  "Non-Mixer/Main Out:out-1"   "Non-Mixer/HeadPhone:in-1"   &
+jack_connect  "Non-Mixer/Main Out:out-2"   "Non-Mixer/HeadPhone:in-2"   &
+
+jack_connect  "Non-Mixer/Main Out:aux-B/out-1"   "Non-Mixer/Out_3+4:in-1"   &
+jack_connect  "Non-Mixer/Main Out:aux-B/out-2"   "Non-Mixer/Out_3+4:in-2"   &
+jack_connect  "Non-Mixer/BussKeys:aux-A/out-1"   "Non-Mixer/Out_3+4:in-1"   &
+jack_connect  "Non-Mixer/BussKeys:aux-A/out-2"   "Non-Mixer/Out_3+4:in-2"   &
+
+jack_connect  "Non-Mixer/Main Out:aux-C/out-1"   "Non-Mixer/Out_5+6:in-1"   &
+jack_connect  "Non-Mixer/Main Out:aux-C/out-2"   "Non-Mixer/Out_5+6:in-2"   &
+jack_connect  "Non-Mixer/BussDrums:aux-A/out-1"   "Non-Mixer/Out_5+6:in-1"   &
+jack_connect  "Non-Mixer/BussDrums:aux-A/out-2"   "Non-Mixer/Out_5+6:in-2"   &
+
+jack_connect  "Non-Mixer/Main Out:aux-D/out-1"   "Non-Mixer/Out_7+8:in-1"   &
+jack_connect  "Non-Mixer/Main Out:aux-D/out-2"   "Non-Mixer/Out_7+8:in-2"   &
+jack_connect  "Non-Mixer/AllVocals:aux-A/out-1"   "Non-Mixer/Out_7+8:in-1"   &
+jack_connect  "Non-Mixer/AllVocals:aux-A/out-2"   "Non-Mixer/Out_7+8:in-2"   &
+
+
+############################################################################################
+#
+#  From mixer   to hardware outputs, to timeline,    to guitarix
+#
+############################################################################################
+
+#    mixer :: to hardware outputs
+
 jack_connect   "Non-Mixer/HeadPhone:out-1" system:playback_1  &
 jack_connect   "Non-Mixer/HeadPhone:out-2" system:playback_2  &
 
+jack_connect   "Non-Mixer/Out_3+4:out-1" system:playback_3  &
+jack_connect   "Non-Mixer/Out_3+4:out-2" system:playback_4  &
+
+jack_connect   "Non-Mixer/Out_5+6:out-1" system:playback_5 &
+jack_connect   "Non-Mixer/Out_5+6:out-2" system:playback_6  &
+
+jack_connect   "Non-Mixer/Out_7+8:out-1" system:playback_7 &
+jack_connect   "Non-Mixer/Out_7+8:out-2" system:playback_8  &
+
 #    mixer  ::  timeline
+
 jack_connect   "Non-Mixer/Main Out:out-1" "Non-Timeline:MainOut/in-1"   &
 jack_connect   "Non-Mixer/Main Out:out-2" "Non-Timeline:MainOut/in-2"   &
 
@@ -498,12 +535,12 @@ jack_connect "a2j:USB Axiom 49 [32] (capture): USB Axiom 49 MIDI 1" "yoshimi:mid
 #### jack mixer output to tascam
 ########################################################################################
 sleep 5
-/home/arthurx/Audio_Settings_Samples/Scripts/make_jack_output_connections_to_tascam.py connect &
+#/home/arthurx/Audio_Settings_Samples/Scripts/make_jack_output_connections_to_tascam.py connect &
 sleep 5
-/home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_rob.py  &
+#/home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_rob.py  &
 sleep 5
-/home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Bass.py  &
+#/home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Bass.py  &
 sleep 5
-python /home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Horn.py  &
+#/home/arthurx/Audio_Settings_Samples/Scripts/start_headphone_Horn.py  &
 
 

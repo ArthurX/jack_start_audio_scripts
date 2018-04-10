@@ -8,6 +8,7 @@ killall jack
 killall qsampler 
 killall qtractor 
 killall yoshimi
+killall a2jmidid
 
 sleep 10
 
@@ -49,11 +50,11 @@ sleep 5
 sleep 5
 #/home/arthurx/Audio_Settings_Samples/Scripts/convert_osc_to_non_float.py  8080 8081 &
 
-non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/RobPhone_5+6/ &
+#non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/RobPhone_5+6/ &
 sleep 2
-non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/BassPhone_3+4/ &
+#non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/BassPhone_3+4/ &
 sleep 2
-non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/HornPhone_7+8/ &
+#non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/HornPhone_7+8/ &
 sleep 2
 non-mixer /home/arthurx/Audio_Rec_2016/work_dir/Non-Mixer/ & # --osc-port 8081 &
 sleep 2
