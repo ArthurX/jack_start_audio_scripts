@@ -9,6 +9,7 @@ killall qsampler
 killall qtractor 
 killall yoshimi
 killall a2jmidid
+killall gxtuner
 
 sleep 10
 
@@ -35,33 +36,29 @@ sleep 10
 qsampler /home/arthurx/Audio_Settings_Samples/Audio_Samples/Grand_Strings.lscp &
 #qsampler /home/arthurx/Audio_Settings_Samples/Audio_Samples/Grand_Strings_Back_Up.lscp &
 
-sleep 10
+sleep 2
 #guitarix &
-sleep 10
+sleep 2
 /usr/bin/a2jmidid -e &
 
 
 #qmidiroute /home/arthurx/Audio_Settings_Samples/Scripts/Copy_Note_On_to_Channel2.qmr &
 
 
-sleep 5
+sleep 1
 #qtractor /home/arthurx/Audio_Rec_2016/2017/1/Wolbodo_7_Jan_2017/Qtrac/Wolbodo_2017.qtr &
 
-sleep 5
+sleep 1
 #/home/arthurx/Audio_Settings_Samples/Scripts/convert_osc_to_non_float.py  8080 8081 &
 
-#non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/RobPhone_5+6/ &
-sleep 2
-#non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/BassPhone_3+4/ &
-sleep 2
-#non-mixer /home/arthurx/Audio_Settings_Samples/Scripts/Mixers/HeadPhone_Mix/HornPhone_7+8/ &
+
 sleep 2
 non-mixer /home/arthurx/Audio_Rec_2016/work_dir/Non-Mixer/ & # --osc-port 8081 &
 sleep 2
 
 non-timeline /home/arthurx/Audio_Rec_2016/work_dir/ &
 
-sleep 5
+sleep 2
 #yoshimi --load-instrument="/usr/share/yoshimi/banks/Strings/0006-Saw Strings 6.xiz"  &
 #zynaddsubfx --load="/home/arthurx/Audio_Settings_Samples/Audio_Samples/ZynAdd_Presets/StringSaw6.xmz"	&
 yoshimi --state="/home/arthurx/Audio_Settings_Samples/Scripts/Yoshimi/SawStrings6_1__fantasy_synth_2.state"
@@ -70,7 +67,7 @@ sleep 5
 
 
 # set priority order for software under jack
-musicsoft=( "jackdbus" "non-timeline"  "non-mixer")       # "linuxsampler" "zynaddsubfx"       # order the programs from most critical to less
+musicsoft=( "jackdbus" "non-timeline"  "non-mixer" "yoshimi" "linuxsampler")       # "linuxsampler" "zynaddsubfx"       # order the programs from most critical to less
 priority=20                                               # the highest priority for jackdbus
 for i in "${musicsoft[@]}"
     do schedtool -R -p $priority `pidof $i`
@@ -79,7 +76,7 @@ for i in "${musicsoft[@]}"
 
 #schedtool -R -p 20 `pidof jackdbus`                      # example of the normal line
 
-sleep 5
+sleep 2
 qjackctl &
 
 
