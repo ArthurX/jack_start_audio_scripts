@@ -392,10 +392,16 @@ sleep 4
 jack_connect  "Non-Mixer/Main Out:out-1"   "Non-Mixer/HeadPhone:in-1"   &
 jack_connect  "Non-Mixer/Main Out:out-2"   "Non-Mixer/HeadPhone:in-2"   &
 
-jack_connect  "Non-Mixer/Main Out:aux-B/out-1"   "Non-Mixer/Out_3+4:in-1"   &
-jack_connect  "Non-Mixer/Main Out:aux-B/out-2"   "Non-Mixer/Out_3+4:in-2"   &
-jack_connect  "Non-Mixer/BussKeys:aux-A/out-1"   "Non-Mixer/Out_3+4:in-1"   &
-jack_connect  "Non-Mixer/BussKeys:aux-A/out-2"   "Non-Mixer/Out_3+4:in-2"   &
+jack_connect  "Non-Mixer/Main Out:aux-B/out-1"   "Non-Mixer/Out_3:in-1"   &
+jack_connect  "Non-Mixer/Main Out:aux-B/out-2"   "Non-Mixer/Out_3:in-1"   &
+
+jack_connect  "Non-Mixer/Main Out:aux-E/out-1"   "Non-Mixer/Out_4:in-1"   &
+jack_connect  "Non-Mixer/Main Out:aux-E/out-2"   "Non-Mixer/Out_4:in-1"   &
+
+#jack_connect  "Non-Mixer/Main Out:aux-B/out-1"   "Non-Mixer/Out_3+4:in-1"   &
+#jack_connect  "Non-Mixer/Main Out:aux-B/out-2"   "Non-Mixer/Out_3+4:in-2"   &
+#jack_connect  "Non-Mixer/BussKeys:aux-A/out-1"   "Non-Mixer/Out_3+4:in-1"   &
+#jack_connect  "Non-Mixer/BussKeys:aux-A/out-2"   "Non-Mixer/Out_3+4:in-2"   &
 
 jack_connect  "Non-Mixer/Main Out:aux-C/out-1"   "Non-Mixer/Out_5+6:in-1"   &
 jack_connect  "Non-Mixer/Main Out:aux-C/out-2"   "Non-Mixer/Out_5+6:in-2"   &
@@ -419,8 +425,11 @@ jack_connect  "Non-Mixer/AllVocals:aux-A/out-2"   "Non-Mixer/Out_7+8:in-2"   &
 jack_connect   "Non-Mixer/HeadPhone:out-1" system:playback_1  &
 jack_connect   "Non-Mixer/HeadPhone:out-2" system:playback_2  &
 
-jack_connect   "Non-Mixer/Out_3+4:out-1" system:playback_3  &
-jack_connect   "Non-Mixer/Out_3+4:out-2" system:playback_4  &
+#jack_connect   "Non-Mixer/Out_3+4:out-1" system:playback_3  &
+#jack_connect   "Non-Mixer/Out_3+4:out-2" system:playback_4  &
+
+jack_connect   "Non-Mixer/Out_3:out-1" system:playback_3  &
+jack_connect   "Non-Mixer/Out_4:out-1" system:playback_4  &
 
 jack_connect   "Non-Mixer/Out_5+6:out-1" system:playback_5 &
 jack_connect   "Non-Mixer/Out_5+6:out-2" system:playback_6  &

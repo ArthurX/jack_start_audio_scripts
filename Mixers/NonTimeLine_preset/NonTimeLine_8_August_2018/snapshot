@@ -1,0 +1,46 @@
+{
+	Tempo_Point 0x81F create :start 0 :tempo 120.000000
+	Time_Point 0x820 create :start 0 :beats_per_bar 4 :beat_type 4
+	Track 0x821 create :name "Voice" :sequence 0x822 :selected 0 :color 1763148288
+	Audio_Sequence 0x822 create :track 0x821 :name "Mon Dec 28 11:51:43 2015"
+	Track 0x171A create :name "Keys1" :sequence 0x171B :selected 0 :color 3910341632
+	Audio_Sequence 0x171B create :track 0x171A :name "Tue Mar  7 05:51:21 2017"
+	Track 0x823 create :name "Voice2" :sequence 0x824 :selected 0 :color 2127351808
+	Audio_Sequence 0x824 create :track 0x823 :name "Mon Dec 28 11:52:07 2015"
+	Track 0xAAF create :name "VoiceTube" :sequence 0xAB0 :selected 0 :color 3806925568
+	Audio_Sequence 0xAB0 create :track 0xAAF :name "Mon Sep 19 14:53:11 2016"
+	Track 0x825 create :name "Piano" :sequence 0x826 :selected 0 :color 3458930944
+	Audio_Sequence 0x826 create :track 0x825 :name "Mon Dec 28 11:52:34 2015"
+	Track 0x827 create :name "LinSamplr" :sequence 0x828 :selected 0 :color 2755656960
+	Audio_Sequence 0x828 create :track 0x827 :name "Mon Dec 28 11:52:52 2015"
+	Track 0x900 create :name "LinSamplr2" :sequence 0x901 :selected 0 :color 290973696
+	Audio_Sequence 0x901 create :track 0x900 :name "Wed Mar 23 07:32:00 2016"
+	Track 0x829 create :name "ZynArtBamba" :sequence 0x82A :selected 0 :color 3988556544
+	Audio_Sequence 0x82A create :track 0x829 :name "Mon Dec 28 11:53:39 2015"
+	Track 0x82B create :name "Drum" :sequence 0x82C :selected 0 :color 2911160320
+	Audio_Sequence 0x82C create :track 0x82B :name "Mon Dec 28 11:54:29 2015"
+	Track 0xB24 create :name "DrumEllo" :sequence 0xB25 :selected 0 :color 1361961472
+	Audio_Sequence 0xB25 create :track 0xB24 :name "Tue Oct 18 02:59:44 2016"
+	Track 0xF16 create :name "DrumManami" :sequence 0xF17 :selected 0 :color 3910341632
+	Audio_Sequence 0xF17 create :track 0xF16 :name "Tue Dec  6 06:31:54 2016"
+	Track 0x82D create :name "Bass" :sequence 0x82E :selected 0 :color 3051446016
+	Audio_Sequence 0x82E create :track 0x82D :name "Mon Dec 28 11:55:13 2015"
+	Track 0x833 create :name "Guitar" :sequence 0x834 :selected 0 :color 2941471488
+	Audio_Sequence 0x834 create :track 0x833 :name "Mon Dec 28 11:56:07 2015"
+	Track 0x835 create :name "Guitarix" :sequence 0x836 :selected 0 :color 3633929728
+	Audio_Sequence 0x836 create :track 0x835 :name "Sun Mar 20 07:48:46 2016"
+	Track 0x1712 create :name "Keys2" :sequence 0x1713 :selected 0 :color 2387684608
+	Audio_Sequence 0x1713 create :track 0x1712 :name "Wed Jan 11 06:21:44 2017"
+	Track 0x1714 create :name "Keys3" :sequence 0x1715 :selected 0 :color 139861760
+	Audio_Sequence 0x1715 create :track 0x1714 :name "Wed Jan 11 06:22:00 2017"
+	Track 0x82F create :name "MainOut" :sequence 0x830 :selected 0 :color 2065676032
+	Audio_Sequence 0x830 create :track 0x82F :name "Mon Dec 28 11:55:36 2015"
+	Track 0x831 create :name "JaminOut" :sequence 0x832 :selected 0 :color 3452119296
+	Audio_Sequence 0x832 create :track 0x831 :name "Mon Dec 28 11:56:02 2015"
+	Track 0x1B08 create :name "Guitar1" :sequence 0x1B09 :selected 0 :color 3910341632
+	Audio_Sequence 0x1B09 create :track 0x1B08 :name "Wed Jun 28 07:01:18 2017"
+	Track 0x1B0A create :name "Guitar2" :sequence 0x1B0B :selected 0 :color 1361961472
+	Audio_Sequence 0x1B0B create :track 0x1B0A :name "Wed Jun 28 07:01:19 2017"
+	Track 0x1B0C create :name "Guitar3" :sequence 0x1B0D :selected 0 :color 1444908544
+	Audio_Sequence 0x1B0D create :track 0x1B0C :name "Wed Jun 28 07:01:20 2017"
+}
