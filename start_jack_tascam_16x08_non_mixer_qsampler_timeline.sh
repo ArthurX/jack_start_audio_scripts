@@ -58,11 +58,17 @@ sleep 2
 
 non-timeline /home/arthurx/Audio_Rec_2016/work_dir/ &
 
-sleep 2
+sleep 5
 #yoshimi --load-instrument="/usr/share/yoshimi/banks/Strings/0006-Saw Strings 6.xiz"  &
 #zynaddsubfx --load="/home/arthurx/Audio_Settings_Samples/Audio_Samples/ZynAdd_Presets/StringSaw6.xmz"	&
-yoshimi --no-gui --state="/home/arthurx/Audio_Settings_Samples/Scripts/Yoshimi/SawStrings6_1__fantasy_synth_2.state" & # --no-gui  
+#yoshimi  --state="/home/arthurx/Audio_Settings_Samples/Scripts/Yoshimi/SawStrings6_1__fantasy_synth_2.state" & # --no-gui  
 
+yoshimi  --state="/home/arthurx/Audio_Settings_Samples/Scripts/Yoshimi/Midi_01.state" & # --no-gui 
+
+sleep 5
+yoshimi  --state="/home/arthurx/Audio_Settings_Samples/Scripts/Yoshimi/Midi_02.state" & # --no-gui
+sleep 5
+yoshimi  --state="/home/arthurx/Audio_Settings_Samples/Scripts/Yoshimi/Midi_03.state" & # --no-gui
 sleep 5
 
 

@@ -73,8 +73,8 @@ jack_connect  yoshimi:right "Non-Timeline:ZynArtBamba/in-2"    &
 jack_connect  yoshimi-01:left "Non-Mixer/ZynArtBamba:in-1"    &
 jack_connect  yoshimi-01:right "Non-Mixer/ZynArtBamba:in-2"    &
 #  zynaddsubfx to non-timeline
-jack_connect  yoshimi-01:left "Non-Timeline:ZynArtBamba/in-1"    &
-jack_connect  yoshimi-01:right "Non-Timeline:ZynArtBamba/in-2"    &
+jack_connect  yoshimi-02:left "Non-Mixer/ZynArtBamba:in-1"    &
+jack_connect  yoshimi-02:right "Non-Mixer/ZynArtBamba:in-2"    &
 
 #############################################################################################
 #  zynaddsubfx to non-mixer  non-timeline
@@ -254,6 +254,12 @@ jack_connect  "Non-Mixer/Keys3:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 jack_connect  "Non-Mixer/Keys3:out-1"       "Non-Mixer/BussKeys:in-1"     &
 jack_connect  "Non-Mixer/Keys3:out-2"       "Non-Mixer/BussKeys:in-2"     &
 
+###
+###  ZynArt to Wah pedal output 4
+###
+ 
+jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-2" "Non-Mixer/Out_4:in-1"     &
+jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-1" "Non-Mixer/Out_4:in-1"     &
 
 #jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 #jack_connect  "Non-Mixer/ZynArtBamba:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
@@ -285,12 +291,13 @@ jack_connect  "Non-Mixer/Bass:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 jack_connect  "Non-Mixer/Bass:out-1"       "Non-Mixer/BussBass:in-1"     &
 jack_connect  "Non-Mixer/Bass:out-2"       "Non-Mixer/BussBass:in-2"     &
 
+####################################################
 # Guitars
-
+####################################################
 
 # Guitar input to Guitar FX
 jack_connect  "Non-Mixer/Guitar:aux-B/out-1"       "Non-Mixer/GuitarMoon:in-1"     &
-
+jack_connect  "Non-Mixer/Guitar:aux-A/out-1"       "Non-Mixer/GuitarCream:in-1"     &
 
 # Guitarix  to Guitar1 , 2, 3 etc
 jack_connect  "Non-Mixer/Guitarix:aux-A/out-1" "Non-Mixer/Guitar1:in-1"     &
@@ -315,6 +322,14 @@ jack_connect  "Non-Mixer/GuitarClean:aux-B/out-1" "Non-Mixer/Guitar2:in-1"     &
 jack_connect  "Non-Mixer/GuitarClean:aux-B/out-2" "Non-Mixer/Guitar2:in-2"     &
 jack_connect  "Non-Mixer/GuitarClean:aux-C/out-1" "Non-Mixer/Guitar3:in-1"     &
 jack_connect  "Non-Mixer/GuitarClean:aux-C/out-2" "Non-Mixer/Guitar3:in-2"     &
+
+# GuitarCream to Guitar1 , 2, 3 etc
+jack_connect  "Non-Mixer/GuitarCream:aux-A/out-1" "Non-Mixer/Guitar1:in-1"     &
+jack_connect  "Non-Mixer/GuitarCream:aux-A/out-2" "Non-Mixer/Guitar1:in-2"     &
+jack_connect  "Non-Mixer/GuitarCream:aux-B/out-1" "Non-Mixer/Guitar2:in-1"     &
+jack_connect  "Non-Mixer/GuitarCream:aux-B/out-2" "Non-Mixer/Guitar2:in-2"     &
+jack_connect  "Non-Mixer/GuitarCream:aux-C/out-1" "Non-Mixer/Guitar3:in-1"     &
+jack_connect  "Non-Mixer/GuitarCream:aux-C/out-2" "Non-Mixer/Guitar3:in-2"     &
 
 # Guitar1
 jack_connect  "Non-Mixer/Guitar1:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
@@ -513,6 +528,11 @@ jack_connect "a2j:Swissonic 88 [20] (capture): Swissonic 88 MIDI 1" "yoshimi-01:
 jack_connect "a2j:Swissonic 88 [24] (capture): Swissonic 88 MIDI 1" "yoshimi-01:midi in"    &
 jack_connect "a2j:Swissonic 88 [28] (capture): Swissonic 88 MIDI 1" "yoshimi-01:midi in"    &
 jack_connect "a2j:Swissonic 88 [32] (capture): Swissonic 88 MIDI 1" "yoshimi-01:midi in"    &
+
+jack_connect "a2j:Swissonic 88 [20] (capture): Swissonic 88 MIDI 1" "yoshimi-02:midi in"     &
+jack_connect "a2j:Swissonic 88 [24] (capture): Swissonic 88 MIDI 1" "yoshimi-02:midi in"    &
+jack_connect "a2j:Swissonic 88 [28] (capture): Swissonic 88 MIDI 1" "yoshimi-02:midi in"    &
+jack_connect "a2j:Swissonic 88 [32] (capture): Swissonic 88 MIDI 1" "yoshimi-02:midi in"    &
 
 # RoMIO II
 jack_connect "a2j:RoMIO II [28] (capture): RoMIO II MIDI 1" LinuxSampler:midi_in_0    &

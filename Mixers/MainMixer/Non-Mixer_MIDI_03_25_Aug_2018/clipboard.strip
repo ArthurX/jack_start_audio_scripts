@@ -1,0 +1,12 @@
+{
+	Mixer_Strip 0x174 create :name "Guitar" :width "narrow" :tab "fader" :color 518259456 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
+	Chain 0x175 create :strip 0x174 :tab "chain"
+	JACK_Module 0x176 create :parameter_values "0.000000:1.000000" :is_default 1 :chain 0x175 :active 1
+	AUX_Module 0x1434 create :number 1 :parameter_values "-3.000000" :is_default 0 :chain 0x175 :active 1
+	Plugin_Module 0x4B1 create :lv2_plugin_uri "http://guitarix.sourceforge.net/plugins/gx_sfp_#_sfp_" :plugin_ins 1 :plugin_outs 1 :parameter_values "0.610000:0.496454:1.000000:0.121631" :is_default 0 :chain 0x175 :active 1
+	AUX_Module 0x135E create :number 0 :parameter_values "0.000000" :is_default 0 :chain 0x175 :active 1
+	Gain_Module 0x177 create :parameter_values "-14.800000:0.000000" :is_default 1 :chain 0x175 :active 1
+	Meter_Module 0x178 create :is_default 1 :chain 0x175 :active 1
+	Mono_Pan_Module 0x1307 create :parameter_values "0.000000" :is_default 0 :chain 0x175 :active 1
+	JACK_Module 0x179 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x175 :active 1
+}
