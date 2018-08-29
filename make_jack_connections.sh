@@ -184,10 +184,14 @@ sleep 4
 
 # Voices
 
-jack_connect  "Non-Mixer/Voice:out-1"       "Non-Mixer/AllVocals:in-1"     &
-jack_connect  "Non-Mixer/Voice:out-2"       "Non-Mixer/AllVocals:in-2"     &
-jack_connect  "Non-Mixer/Voice:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
-jack_connect  "Non-Mixer/Voice:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
+jack_connect  "Non-Mixer/Voice:aux-A/out-1"       "Non-Mixer/AllVocals:in-1"     &
+jack_connect  "Non-Mixer/Voice:aux-A/out-2"      "Non-Mixer/AllVocals:in-2"     &
+
+jack_connect  "Non-Mixer/Voice:aux-B/out-1" "Non-Mixer/BussDelays:in-1"     &
+jack_connect  "Non-Mixer/Voice:aux-B/out-2" "Non-Mixer/BussDelays:in-2"     &
+
+jack_connect  "Non-Mixer/Voice:aux-C/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/Voice:aux-C/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 
 jack_connect  "Non-Mixer/Voice2:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 jack_connect  "Non-Mixer/Voice2:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
@@ -239,10 +243,12 @@ jack_connect  "Non-Mixer/KeysAll:aux-C/out-2" "Non-Mixer/Keys3:in-2"     &
 sleep 4 
 
 # Keys1 Keys2 & Keys3
-jack_connect  "Non-Mixer/Keys1:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
-jack_connect  "Non-Mixer/Keys1:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
-jack_connect  "Non-Mixer/Keys1:out-1"       "Non-Mixer/BussKeys:in-1"     &
-jack_connect  "Non-Mixer/Keys1:out-2"       "Non-Mixer/BussKeys:in-2"     &
+jack_connect  "Non-Mixer/Keys1:aux-A/out-1" "Non-Mixer/BussKeys:in-1"     &
+jack_connect  "Non-Mixer/Keys1:aux-A/out-2" "Non-Mixer/BussKeys:in-2"     &
+jack_connect  "Non-Mixer/Keys1:aux-C/out-1"       "Non-Mixer/BussDelays:in-1"     &
+jack_connect  "Non-Mixer/Keys1:aux-C/out-2"       "Non-Mixer/BussDelays:in-2"     &
+jack_connect  "Non-Mixer/Keys1:aux-D/out-1" "Non-Mixer/ZitaVerb:in-1"     &
+jack_connect  "Non-Mixer/Keys1:aux-D/out-2" "Non-Mixer/ZitaVerb:in-2"     &
 
 jack_connect  "Non-Mixer/Keys2:aux-A/out-1" "Non-Mixer/ZitaVerb:in-1"     &
 jack_connect  "Non-Mixer/Keys2:aux-A/out-2" "Non-Mixer/ZitaVerb:in-2"     &
